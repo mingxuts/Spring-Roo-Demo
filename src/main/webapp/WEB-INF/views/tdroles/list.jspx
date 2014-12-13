@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_paperuni_demo_model_TdRole" items="${tdroles}" z="gXLJ9dm5PXYGyK4kx42aQG1mnp4=">
+        <table:table data="${tdroles}" id="l_com_paperuni_demo_model_TdRole" path="/tdroles" z="jufnDiUDKqD+p9kwjNmm+zBRv3Y=">
+            <table:column id="c_com_paperuni_demo_model_TdRole_name" property="name" z="ZR8xhPvPT3fgoc8PAq/IvUzhHzk="/>
+            <table:column id="c_com_paperuni_demo_model_TdRole_description" property="description" z="lVEENZ7jouiEPczIk01gT6xAMxs="/>
+            <table:column id="c_com_paperuni_demo_model_TdRole_isActivated" property="isActivated" z="UMfW1elTieOjULOfognLqx1DqKA="/>
+        </table:table>
+    </page:list>
+</div>

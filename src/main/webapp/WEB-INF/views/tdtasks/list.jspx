@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_paperuni_demo_model_TdTask" items="${tdtasks}" z="3zbuVLErMjdzwfEfOSdzzefPW+E=">
+        <table:table data="${tdtasks}" id="l_com_paperuni_demo_model_TdTask" path="/tdtasks" z="IFu/uvRbIFAJJzFcxgiOJtQxNrk=">
+            <table:column id="c_com_paperuni_demo_model_TdTask_customerId" property="customerId" z="Kz6SLr00Sn+tDoW0s5zbvXZg1Zc="/>
+            <table:column id="c_com_paperuni_demo_model_TdTask_orderId" property="orderId" z="RIHHFzKfrMsPTc7tBPNEjA53uIg="/>
+            <table:column id="c_com_paperuni_demo_model_TdTask_subjectId" property="subjectId" z="EPDjpLGiAOvNMfBFW0mbu2TKdmM="/>
+            <table:column id="c_com_paperuni_demo_model_TdTask_writerId" property="writerId" z="LW1jCaZWCIO09aMFgY7M3H5gCt4="/>
+        </table:table>
+    </page:list>
+</div>

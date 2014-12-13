@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" xmlns:c="http://java.sun.com/jsp/jstl/core"  version="2.0">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <jsp:output omit-xml-declaration="yes"/>
+  <spring:message code="label_signup_index" htmlEscape="false" var="title"/>
+  <div class="panel panel-default">
+  	<div class="panel-heading">
+	    <spring:message code="application_name" htmlEscape="false" var="app_name"/>    
+	    <h3 class="panel-title">
+	      <spring:message code="user_signup_titlepane"/>
+	    </h3>    	
+  	</div>
+	<div class="panel-body">
+	<form class="col-sm-4" role="form" action="" method="POST"
+		id="signup_form1">
+		<div class="form-group">
+			<label>Your Email Address:</label> <input type="email" name="email"
+				class="form-control" id="exampleInputEmail2" required="true"
+				placeholder="Enter email address" />
+		</div>
+		<div class="form-group">
+			<label>Password: 6-10 digits and letters</label> <input name="password"
+				type="password" class="form-control" id="inputpassword" required="true"
+				placeholder="Enter Password" minlength="6" maxlength="10"/>
+		</div>
+		<legend class="">Information below are used to contact you,
+			please fill in as much as possible.</legend>
+		<div class="form-group">
+			<label>Contact:</label> <select id="inputcontacttype"
+				class="form-control" name="contactType">
+				<option>Mobile</option>
+				<option>QQ</option>
+				<OPTION>Wechat</OPTION>
+				<option>Skype</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label>Contact No.</label> <input type="text" class="form-control" name="contactnumber"
+				id="inputcontactnumber" />
+		</div>
+		<div class="form-group">
+			<label>Your country:</label> <input type="text" class="form-control" name="country"
+				id="inputcountry" />
+		</div>
+
+		<div class="form-group">
+			<label>Your city:</label> <input type="text" class="form-control" name="city"
+				id="inputcity" />
+		</div>
+
+		<div class="checkbox container-fluid"
+			style="clear: both; margin-top: 35px; left: -318px;top: 10px;">
+			<label style="width: 220px; height: 25px;"> <input
+				type="checkbox" class="" id="inputterms" style="top: 7px;" /> I
+				agree with Papaeruni's terms.
+			</label>
+
+		</div>
+
+		<button type="submit" class="btn btn-primary"
+			style="display: block; margin-top: 24px;">Sign UP</button>
+	</form>
+	</div>  
+  </div>
+	<spring:message code="user_signup_successful" var="signup_successful" htmlEscape="false" />
+	<spring:url var="login_url" value="/login" />
+	<script type="text/javascript">
+    <c:if test="${not empty signup_success}">
+    alert("${signup_successful}");
+    location.href = "${login_url}";
+	</c:if>	
+	</script>
+</div>

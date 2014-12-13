@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/jquery/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create compositePkField="id" id="fc_com_paperuni_demo_model_TdMessage" modelAttribute="tdMessage" path="/tdmessages" render="${empty dependencies}" z="O/PMEKYf4Co+lqlpdP8o1GrmjgA=">
+        <field:input disableFormBinding="true" field="id.id" id="c_com_paperuni_demo_model_TdMessage_id_id" required="true" validationMessageCode="field_invalid_integer" z="VAncjp0gDaZaxsOW4eTaw0+BQL0="/>
+        <field:input disableFormBinding="true" field="id.taskId" id="c_com_paperuni_demo_model_TdMessage_id_taskId" required="true" validationMessageCode="field_invalid_integer" z="AQc1pGVnm7fUkg70GmoetDK3D8o="/>
+        <field:input field="source" id="c_com_paperuni_demo_model_TdMessage_source" z="5BZfN/VlaKoE++nkZvOKfoviZAU="/>
+        <field:datetime dateTimePattern="${tdMessage_createdate_date_format}" field="createDate" id="c_com_paperuni_demo_model_TdMessage_createDate" z="xHt5pUX14/TkHL0hJr40DNEWrfg="/>
+        <field:input field="body" id="c_com_paperuni_demo_model_TdMessage_body" required="true" z="x/BXzQMwAwhST6WgxCMN0zsYais="/>
+        <field:input field="link" id="c_com_paperuni_demo_model_TdMessage_link" z="2ixApcBc9vW4e5lvZPu9W3O+v7s="/>
+        <field:checkbox field="hasReview" id="c_com_paperuni_demo_model_TdMessage_hasReview" z="8lcEecl4wXjCeVOL/6d/6T8GSe0="/>
+        <field:checkbox field="hasRead" id="c_com_paperuni_demo_model_TdMessage_hasRead" z="11+yeH2foqik+Ic8GplSPp+3Dds="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_com_paperuni_demo_model_TdMessage" render="${not empty dependencies}" z="/csqUzUHuV1lmowhJNQ+ZTeN924="/>
+</div>

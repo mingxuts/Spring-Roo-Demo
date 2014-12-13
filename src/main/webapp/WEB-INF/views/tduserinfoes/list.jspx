@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_paperuni_demo_model_TdUserinfo" items="${tduserinfoes}" z="WcWJ+YOjzkgC+5EZHsOy/H2Txik=">
+        <table:table data="${tduserinfoes}" id="l_com_paperuni_demo_model_TdUserinfo" path="/tduserinfoes" z="mIwAlJfVM3R2+gZ5ayTSxKoS6Mw=">
+            <table:column id="c_com_paperuni_demo_model_TdUserinfo_email" property="email" z="FtUsvfOdgOzUazj+grP1jUGgzcs="/>
+            <table:column id="c_com_paperuni_demo_model_TdUserinfo_loginPassword" property="loginPassword" z="nmU3zbmqgTBwr6H171pj3UYdd2I="/>
+            <table:column id="c_com_paperuni_demo_model_TdUserinfo_groupName" property="groupName" z="kAGV6LuRXKxS2bsJg5hhQ2lZa9M="/>
+            <table:column id="c_com_paperuni_demo_model_TdUserinfo_createBy" property="createBy" z="NtciZoJ4DwElAlEg+qxqVGaCQpQ="/>
+        </table:table>
+    </page:list>
+</div>

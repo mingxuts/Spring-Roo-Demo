@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_paperuni_demo_model_TdMessage" object="${tdmessage}" path="/tdmessages" z="37XDJSas6SlhO+7Jtj54eMTvIqc=">
+        <field:display field="taskId" id="s_com_paperuni_demo_model_TdMessage_taskId" object="${tdmessage}" z="wofq7qbMnY9Q/CDYgbEpo/Ubvhc="/>
+        <field:display field="source" id="s_com_paperuni_demo_model_TdMessage_source" object="${tdmessage}" z="dLJhKx+8+K3+3FK/lWhSSwCHk3M="/>
+        <field:display calendar="true" dateTimePattern="${tdMessage_createdate_date_format}" field="createDate" id="s_com_paperuni_demo_model_TdMessage_createDate" object="${tdmessage}" z="PoHY2eoCPO9HNPf0T9QUNn/llHk="/>
+        <field:display field="body" id="s_com_paperuni_demo_model_TdMessage_body" object="${tdmessage}" z="oGMxRkzisCXcZ6MaHIL4oEhA7yQ="/>
+        <field:display field="link" id="s_com_paperuni_demo_model_TdMessage_link" object="${tdmessage}" z="ucHE4+YuoUT5ZLN0A0QROH4PXcE="/>
+        <field:display field="hasReview" id="s_com_paperuni_demo_model_TdMessage_hasReview" object="${tdmessage}" z="86HfVzUt7KET41KaYNBtV5nRe54="/>
+        <field:display field="hasRead" id="s_com_paperuni_demo_model_TdMessage_hasRead" object="${tdmessage}" z="bgLYySSGuTARNi/fMjxeFvBm/yk="/>
+    </page:show>
+</div>

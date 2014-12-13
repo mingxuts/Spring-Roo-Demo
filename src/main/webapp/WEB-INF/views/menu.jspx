@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" id="menu" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <menu:menu id="_menu" z="nZaf43BjUg1iM0v70HJVEsXDopc=">
+        <menu:category id="c_tdtask" z="KAGhGXauEt+h+PThWcBOIGaE6Cg=">
+            <menu:item id="i_tdtask_new" messageCode="global_menu_new" url="/tdtasks?form" z="XdPaM/46BxjUQAEsWXYPFEzUYQg="/>
+            <menu:item id="i_tdtask_list" messageCode="global_menu_list" url="/tdtasks?page=1&amp;size=${empty param.size ? 10 : param.size}" z="gwd/lHhSA6dJ02fcbpf80dpJWXk="/>
+        </menu:category>
+        <menu:category id="c_tduserinfo" z="1SYuPo4DMozCvTkeldttYCwlepY=">
+            <menu:item id="i_tduserinfo_new" messageCode="global_menu_new" url="/tduserinfoes?form" z="ZPgQ0eGX4f7mP0WK0gx3dS9wXe0="/>
+            <menu:item id="i_tduserinfo_list" messageCode="global_menu_list" url="/tduserinfoes?page=1&amp;size=${empty param.size ? 10 : param.size}" z="wXbSUiFEikd4K62l/nyYVjsUXx8="/>
+        </menu:category>
+        <menu:category id="c_tdrole" z="vMiPuOC0oi0kLOTvbsjdWQnR4Gg=">
+            <menu:item id="i_tdrole_new" messageCode="global_menu_new" url="/tdroles?form" z="yxhFCZkU7uIbB/j54Sm1BhyZtPY="/>
+            <menu:item id="i_tdrole_list" messageCode="global_menu_list" url="/tdroles?page=1&amp;size=${empty param.size ? 10 : param.size}" z="caA6J6IdrmtFo6ke5O8LAKogXhE="/>
+        </menu:category>
+        <menu:category id="c_tdmessage" z="ggLGYUBTEPVvWkSUQk2MWYc3NcU=">
+            <menu:item id="i_tdmessage_new" messageCode="global_menu_new" url="/tdmessages?form" z="XOkW1MVKifO0Ev8G+JavVCiIPtU="/>
+            <menu:item id="i_tdmessage_list" messageCode="global_menu_list" url="/tdmessages?page=1&amp;size=${empty param.size ? 10 : param.size}" z="OhcL3/bagEkA0KH6mvrIg4UX7C0="/>
+        </menu:category>
+        <menu:category id="c_tdsubject" z="IWOcr3aD8o9lm22LmnJoRyDIaEI=">
+            <menu:item id="i_tdsubject_new" messageCode="global_menu_new" url="/tdsubjects?form" z="c+nCQRKh2E1z8pe+E6MBEL0O88U="/>
+            <menu:item id="i_tdsubject_list" messageCode="global_menu_list" url="/tdsubjects?page=1&amp;size=${empty param.size ? 10 : param.size}" z="JQCcp7UG9LC4NFlK2db5OSAyc3A="/>
+        </menu:category>
+        <menu:category id="c_tdorder" z="ydD4YFuGovr58IFZOkNxhsng3Rk=">
+            <menu:item id="i_tdorder_new" messageCode="global_menu_new" url="/tdorders?form" z="DXNryP2aVw8KhW3jcYJVI2mdtwg="/>
+            <menu:item id="i_tdorder_list" messageCode="global_menu_list" url="/tdorders?page=1&amp;size=${empty param.size ? 10 : param.size}" z="KDv/1fWb9nf5O6jYVjfUAKLByj0="/>
+        </menu:category>
+        <menu:category id="c_controller" z="nj8Dm3hojIyIEyPkwE1UMDIs+K8=">
+            <menu:item id="i_controller__signupindex_id" messageCode="global_generic" url="/signup/index" z="G29JbCmXjdbb3PEygLrF79Au6Fs="/>
+        </menu:category>
+    </menu:menu>
+</div>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_paperuni_demo_model_TdOrder" object="${tdorder}" path="/tdorders" z="8bakX6mhS7nBf+9wOEHhl6/AxpY=">
+        <field:display field="taskId" id="s_com_paperuni_demo_model_TdOrder_taskId" object="${tdorder}" z="O45wwMz996ANxuYkpvMkKTl+mvE="/>
+        <field:display field="subjectId" id="s_com_paperuni_demo_model_TdOrder_subjectId" object="${tdorder}" z="44uMIDUSwrn9eqV68LD/IvIw9qQ="/>
+        <field:display field="orderStatus" id="s_com_paperuni_demo_model_TdOrder_orderStatus" object="${tdorder}" z="v/NUxI1DY1FMjdgot/7lmOi/eyM="/>
+        <field:display calendar="true" dateTimePattern="${tdOrder_startdate_date_format}" field="startDate" id="s_com_paperuni_demo_model_TdOrder_startDate" object="${tdorder}" z="z50q2rLFaW1h0trmcVyPy/ekSYA="/>
+        <field:display calendar="true" dateTimePattern="${tdOrder_deadline_date_format}" field="deadLine" id="s_com_paperuni_demo_model_TdOrder_deadLine" object="${tdorder}" z="ouq6SYANzPpvpYFVC/HDTfolTjw="/>
+        <field:display field="wordCount" id="s_com_paperuni_demo_model_TdOrder_wordCount" object="${tdorder}" z="XUB5RIShaGZvbO42Y5XYCo82b60="/>
+        <field:display field="note" id="s_com_paperuni_demo_model_TdOrder_note" object="${tdorder}" z="ftcmxPCsON+NQLLvaJGnu3hBvnU="/>
+        <field:display field="customerId" id="s_com_paperuni_demo_model_TdOrder_customerId" object="${tdorder}" z="jQyNeGZyPnM1jtFI0DO9Y+kOgiI="/>
+        <field:display field="courseLevel" id="s_com_paperuni_demo_model_TdOrder_courseLevel" object="${tdorder}" z="Oav6tYdHiEjSC1tMviPqsIonsA0="/>
+        <field:display field="coupon" id="s_com_paperuni_demo_model_TdOrder_coupon" object="${tdorder}" z="faAW3K3h69d68yzXycee7q9ER7Q="/>
+        <field:display calendar="true" dateTimePattern="${tdOrder_createdate_date_format}" field="createDate" id="s_com_paperuni_demo_model_TdOrder_createDate" object="${tdorder}" z="DqpSaVxSximdy1cCzaHFz+10siQ="/>
+        <field:display field="file" id="s_com_paperuni_demo_model_TdOrder_file" object="${tdorder}" z="w+81DAjjbhsuyUqzwbpSkoUWX/4="/>
+        <field:display field="format" id="s_com_paperuni_demo_model_TdOrder_format" object="${tdorder}" z="NAVjSaO3dnaBnW8yUuiVVORkaVM="/>
+        <field:display field="referencing" id="s_com_paperuni_demo_model_TdOrder_referencing" object="${tdorder}" z="ueuQmehfu0SmJE6KLKnLJf2aGQs="/>
+        <field:display field="sourcesCount" id="s_com_paperuni_demo_model_TdOrder_sourcesCount" object="${tdorder}" z="7xCC8cEnu2NjdPtzDjJm3QBS1y0="/>
+        <field:display field="fileContentType" id="s_com_paperuni_demo_model_TdOrder_fileContentType" object="${tdorder}" z="id/lhPCDgpU5uqpjZYTl5oJC56U="/>
+    </page:show>
+</div>

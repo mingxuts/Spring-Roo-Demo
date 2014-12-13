@@ -1,0 +1,38 @@
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-12-12 12:55:25
+project --topLevelPackage com.paperuni.demo
+jpa setup --provider HIBERNATE --database MYSQL
+database reverse engineer --schema paperdemo --testAutomatically --repository --package ~.model --includeTables "td*"
+web mvc setup
+web mvc all --package ~.web
+web mvc jquery setup
+web mvc bootstrap setup
+perform package
+quit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2014-12-12 12:58:37
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-12-12 13:05:52
+database reverse engineer --schema paperdemo --package ~.model --testAutomatically --repository --includeTables "td*"
+quit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2014-12-12 13:07:32
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-12-12 13:28:11
+security setup
+web mvc controller --class ~.web.SignupController
+perform eclipse
+quit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2014-12-12 13:30:00
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-12-12 13:32:29
+hint web mvc jquery 
+hint web mvc jquery add
+help web mvc jquery 
+// [failed] web mvc jquery add --type ~.web.SignupController
+web mvc jquery all
+quit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2014-12-12 13:36:19
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-12-12 14:17:19
+web mvc bootstrap update
+quit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2014-12-12 14:17:34
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-12-12 21:51:12
+// [failed] database reverse engineer --schema paperdemo --testAutomatically --repository --package ~.model --includeTables "td_task"
+database reverse engineer --schema paperdemo --testAutomatically --repository --package ~.model 
+quit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2014-12-12 21:53:15

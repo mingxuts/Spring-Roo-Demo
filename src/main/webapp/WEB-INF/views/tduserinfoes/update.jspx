@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/jquery/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_com_paperuni_demo_model_TdUserinfo" modelAttribute="tdUserinfo" path="/tduserinfoes" versionField="none" z="jcZ4AkwKzGr15fjZwDh/iG5S2M0=">
+        <field:simple field="tdTasks" id="c_com_paperuni_demo_model_TdUserinfo_tdTasks" messageCode="entity_reference_not_managed" messageCodeAttribute="Td Task" z="XZp6+moTdrbm/T6MgovnBLdPc+U="/>
+        <field:simple field="tdTasks1" id="c_com_paperuni_demo_model_TdUserinfo_tdTasks1" messageCode="entity_reference_not_managed" messageCodeAttribute="Td Task" z="a22wT44wCX05IjQdUFJn+pgGSxs="/>
+        <field:input field="email" id="c_com_paperuni_demo_model_TdUserinfo_email" required="true" validationMessageCode="field_invalid_email" z="vMB8p20zdEbofDulVgeVhBFHWzI="/>
+        <field:input field="loginPassword" id="c_com_paperuni_demo_model_TdUserinfo_loginPassword" required="true" z="Km67vrrXciIwabwPQVlXzyaxB58="/>
+        <field:input field="groupName" id="c_com_paperuni_demo_model_TdUserinfo_groupName" required="true" z="EIdO/jErT9I2xSDh+dlBaGt7KIw="/>
+        <field:input field="createBy" id="c_com_paperuni_demo_model_TdUserinfo_createBy" validationMessageCode="field_invalid_integer" z="9eGQqBY3R9av4nX/EPyhQSkdf8I="/>
+        <field:datetime dateTimePattern="${tdUserinfo_createdate_date_format}" field="createDate" id="c_com_paperuni_demo_model_TdUserinfo_createDate" z="gmERh5jJI8f+VRVqRLGW54RQNLI="/>
+        <field:input field="preferName" id="c_com_paperuni_demo_model_TdUserinfo_preferName" z="nLZ7a4/cKmoGuhAryZnE8nivrkU="/>
+        <field:input field="country" id="c_com_paperuni_demo_model_TdUserinfo_country" z="15R/t7T268MbWiFz2HTi0QCfqyw="/>
+        <field:input field="city" id="c_com_paperuni_demo_model_TdUserinfo_city" z="QDk+jac4bgglRsD4N3me+twlfKQ="/>
+        <field:input field="contactType" id="c_com_paperuni_demo_model_TdUserinfo_contactType" z="iIThHSYhnVQTXL9QPMrP89r1AEg="/>
+        <field:input field="contactId" id="c_com_paperuni_demo_model_TdUserinfo_contactId" z="EQj7egICG5v7Cy8l8qvVO5iq6VE="/>
+        <field:input field="emailCode" id="c_com_paperuni_demo_model_TdUserinfo_emailCode" validationMessageCode="field_invalid_email" z="GbWeC6UU4GeAgwk/klJELI/Ss4g="/>
+        <field:checkbox field="passwordNonExpired" id="c_com_paperuni_demo_model_TdUserinfo_passwordNonExpired" z="nFeBEx9NulTDir7+/kXMr/+98DY="/>
+        <field:checkbox field="hasVerified" id="c_com_paperuni_demo_model_TdUserinfo_hasVerified" z="58pUGkesp/b5IfLFVWNBmJK9h8Y="/>
+        <field:input field="special" id="c_com_paperuni_demo_model_TdUserinfo_special" z="FPif/JdZhz9Ron/b4pja3pGbWk0="/>
+    </form:update>
+</div>

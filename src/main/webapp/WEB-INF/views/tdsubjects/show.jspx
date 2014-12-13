@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_paperuni_demo_model_TdSubject" object="${tdsubject}" path="/tdsubjects" z="jQAlbHRmF1tzlAXSUlLFhxmCea4=">
+        <field:display field="name" id="s_com_paperuni_demo_model_TdSubject_name" object="${tdsubject}" z="IQ9EbkQn12xaMhE8BcEgWqsyIg8="/>
+        <field:display field="description" id="s_com_paperuni_demo_model_TdSubject_description" object="${tdsubject}" z="wq4HQhYg6/spr7qtTWouNlR3mqc="/>
+    </page:show>
+</div>

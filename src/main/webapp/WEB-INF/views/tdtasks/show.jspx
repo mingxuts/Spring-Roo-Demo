@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_paperuni_demo_model_TdTask" object="${tdtask}" path="/tdtasks" z="DwXsbqE5/Fv9X0gsp76UM1VlX7c=">
+        <field:display field="customerId" id="s_com_paperuni_demo_model_TdTask_customerId" object="${tdtask}" z="XEKzph02eUHGem6NzQseZA+9szc="/>
+        <field:display field="orderId" id="s_com_paperuni_demo_model_TdTask_orderId" object="${tdtask}" z="5dAaHSWTjoZZ1H4WJJ6eLFTlPOA="/>
+        <field:display field="subjectId" id="s_com_paperuni_demo_model_TdTask_subjectId" object="${tdtask}" z="piOGGhhmXFaT7JGIXTamewDTO1I="/>
+        <field:display field="writerId" id="s_com_paperuni_demo_model_TdTask_writerId" object="${tdtask}" z="+rNRdOPS4tiJBJyNJZu6hBzj9Ok="/>
+        <field:display field="status" id="s_com_paperuni_demo_model_TdTask_status" object="${tdtask}" z="xptSdru2drhsp18Ubdv5QK2meAU="/>
+        <field:display calendar="true" dateTimePattern="${tdTask_startdate_date_format}" field="startDate" id="s_com_paperuni_demo_model_TdTask_startDate" object="${tdtask}" z="uPq/2hVZx1XiwZ5IsYZ6xOWqld0="/>
+        <field:display calendar="true" dateTimePattern="${tdTask_deadline_date_format}" field="deadLine" id="s_com_paperuni_demo_model_TdTask_deadLine" object="${tdtask}" z="3ZXfZ/FA3tp3+8U+73J0jMevif8="/>
+        <field:display field="wordCount" id="s_com_paperuni_demo_model_TdTask_wordCount" object="${tdtask}" z="qAoSUsutgGZREbvUaBQ3Lf7487Y="/>
+        <field:display field="note" id="s_com_paperuni_demo_model_TdTask_note" object="${tdtask}" z="H0rQeBobSAanX7Pb90IOhiAzdHo="/>
+        <field:display field="courseLevel" id="s_com_paperuni_demo_model_TdTask_courseLevel" object="${tdtask}" z="6MjzAN5fHvT/z1QB4xHx+4wTgIo="/>
+        <field:display field="coupon" id="s_com_paperuni_demo_model_TdTask_coupon" object="${tdtask}" z="g/qWip2B+kZ292QkKsd12x9MrQk="/>
+        <field:display calendar="true" dateTimePattern="${tdTask_createdate_date_format}" field="createDate" id="s_com_paperuni_demo_model_TdTask_createDate" object="${tdtask}" z="WQGQCjyVlbCL4trh1J7z5nPcoj0="/>
+        <field:display field="file" id="s_com_paperuni_demo_model_TdTask_file" object="${tdtask}" z="cDrYwJhHXmf2fYVg+J/187Q/RkM="/>
+        <field:display field="format" id="s_com_paperuni_demo_model_TdTask_format" object="${tdtask}" z="hq64OSKdhTlXGN1+flxYjGSQftY="/>
+        <field:display field="referencing" id="s_com_paperuni_demo_model_TdTask_referencing" object="${tdtask}" z="e6ogNlBNNV72JNJqqZQqOo4ZtPE="/>
+        <field:display field="sourcesCount" id="s_com_paperuni_demo_model_TdTask_sourcesCount" object="${tdtask}" z="58f0Wmvc6e5uC8y1aBLrU70cr1Y="/>
+        <field:display field="fullPrice" id="s_com_paperuni_demo_model_TdTask_fullPrice" object="${tdtask}" z="8EF/e9o3wNqhbYtuNnlGqianuIc="/>
+        <field:display field="reduced" id="s_com_paperuni_demo_model_TdTask_reduced" object="${tdtask}" z="7ozkFWhJY5gecfGqBNo1bl5TD3k="/>
+        <field:display field="commission" id="s_com_paperuni_demo_model_TdTask_commission" object="${tdtask}" z="eWa12Wuf5d1h1tReFs0LdPsQMZU="/>
+        <field:display field="chargeWriter" id="s_com_paperuni_demo_model_TdTask_chargeWriter" object="${tdtask}" z="o7jFn0UQWYIYLzK7b99+wHzMlZk="/>
+        <field:display field="amountDue" id="s_com_paperuni_demo_model_TdTask_amountDue" object="${tdtask}" z="6Ld+c2oVsiYKtzK0NGGURRbm8n4="/>
+        <field:display field="feedBack" id="s_com_paperuni_demo_model_TdTask_feedBack" object="${tdtask}" z="DV6CyVSm5OSVmgsjH/yKUb0w4HU="/>
+        <field:display field="feedBackDescription" id="s_com_paperuni_demo_model_TdTask_feedBackDescription" object="${tdtask}" z="uwEFZLjQqcWcgahObod96koit6U="/>
+        <field:display field="allowAllSubject" id="s_com_paperuni_demo_model_TdTask_allowAllSubject" object="${tdtask}" z="/y2VfsZC671PpB4ruxFPxvhauPI="/>
+    </page:show>
+</div>
