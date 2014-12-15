@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+	
+	<div>
+		<p><a href="/home/profile" >My Profile</a></p>
+		 <p><a href="/tdorders?form" >Place Order</a></p>
+		 <p><a href="/" >My Orders</a></p>
+		 <p><a href="/" >Payment Instructions</a></p>
+		 <p><a href="/" >Chat Room</a></p>
+	</div>
+</div>
