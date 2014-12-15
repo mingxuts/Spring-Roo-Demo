@@ -3,9 +3,6 @@
 
 package com.paperuni.demo.model;
 
-import com.paperuni.demo.model.TdOrder;
-import com.paperuni.demo.model.TdOrderDataOnDemand;
-import com.paperuni.demo.model.TdSubjectDataOnDemand;
 import com.paperuni.demo.model.TdTask;
 import com.paperuni.demo.model.TdTaskDataOnDemand;
 import com.paperuni.demo.model.TdTaskRepository;
@@ -35,12 +32,6 @@ privileged aspect TdTaskDataOnDemand_Roo_DataOnDemand {
     TdUserinfoDataOnDemand TdTaskDataOnDemand.tdUserinfoDataOnDemand;
     
     @Autowired
-    TdOrderDataOnDemand TdTaskDataOnDemand.tdOrderDataOnDemand;
-    
-    @Autowired
-    TdSubjectDataOnDemand TdTaskDataOnDemand.tdSubjectDataOnDemand;
-    
-    @Autowired
     TdTaskRepository TdTaskDataOnDemand.tdTaskRepository;
     
     public TdTask TdTaskDataOnDemand.getNewTransientTdTask(int index) {
@@ -56,6 +47,7 @@ privileged aspect TdTaskDataOnDemand_Roo_DataOnDemand {
         setFeedBack(obj, index);
         setFeedBackDescription(obj, index);
         setFile(obj, index);
+        setFileContentType(obj, index);
         setFormat(obj, index);
         setFullPrice(obj, index);
         setNote(obj, index);
@@ -65,6 +57,7 @@ privileged aspect TdTaskDataOnDemand_Roo_DataOnDemand {
         setSourcesCount(obj, index);
         setStartDate(obj, index);
         setStatus(obj, index);
+        setSubjectId(obj, index);
         setWordCount(obj, index);
         return obj;
     }
@@ -142,6 +135,14 @@ privileged aspect TdTaskDataOnDemand_Roo_DataOnDemand {
         obj.setFile(file);
     }
     
+    public void TdTaskDataOnDemand.setFileContentType(TdTask obj, int index) {
+        String fileContentType = "fileContentType_" + index;
+        if (fileContentType.length() > 50) {
+            fileContentType = fileContentType.substring(0, 50);
+        }
+        obj.setFileContentType(fileContentType);
+    }
+    
     public void TdTaskDataOnDemand.setFormat(TdTask obj, int index) {
         String format = "format_" + index;
         if (format.length() > 30) {
@@ -167,7 +168,7 @@ privileged aspect TdTaskDataOnDemand_Roo_DataOnDemand {
     }
     
     public void TdTaskDataOnDemand.setOrderId(TdTask obj, int index) {
-        TdOrder orderId = tdOrderDataOnDemand.getRandomTdOrder();
+        Integer orderId = new Integer(index);
         obj.setOrderId(orderId);
     }
     
@@ -203,6 +204,11 @@ privileged aspect TdTaskDataOnDemand_Roo_DataOnDemand {
             status = status.substring(0, 88);
         }
         obj.setStatus(status);
+    }
+    
+    public void TdTaskDataOnDemand.setSubjectId(TdTask obj, int index) {
+        Integer subjectId = new Integer(index);
+        obj.setSubjectId(subjectId);
     }
     
     public void TdTaskDataOnDemand.setWordCount(TdTask obj, int index) {

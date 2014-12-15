@@ -4,7 +4,6 @@
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_com_paperuni_demo_model_TdSubject" modelAttribute="tdSubject" path="/tdsubjects" versionField="none" z="whx7vlygFogfnrXgKTkO/cVqjPY=">
         <field:simple field="tdOrders" id="c_com_paperuni_demo_model_TdSubject_tdOrders" messageCode="entity_reference_not_managed" messageCodeAttribute="Td Order" z="v5LyCuc+Wqp/TUbtxfa4W48bemc="/>
-        <field:simple field="tdTasks" id="c_com_paperuni_demo_model_TdSubject_tdTasks" messageCode="entity_reference_not_managed" messageCodeAttribute="Td Task" z="FjZOsYADQ/Ij9UzbkVanDREIbjg="/>
         <field:input field="name" id="c_com_paperuni_demo_model_TdSubject_name" required="true" z="7PUBONJywO1tRjQZ1paEaNaX7EI="/>
         <field:input field="description" id="c_com_paperuni_demo_model_TdSubject_description" z="bKPXGW/MB54ctdWYNLs1uJEMX7Y="/>
     </form:update>

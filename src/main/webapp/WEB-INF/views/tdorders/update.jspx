@@ -2,8 +2,7 @@
 <div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/jquery/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
-    <form:update id="fu_com_paperuni_demo_model_TdOrder" modelAttribute="tdOrder" path="/tdorders" versionField="none" multipart="true" z="user-managed">
-        <field:simple field="tdTasks" id="c_com_paperuni_demo_model_TdOrder_tdTasks" messageCode="entity_reference_not_managed" messageCodeAttribute="Td Task" z="ZowihWUusVTa4Fmb4I4bhtrVG8k="/>
+    <form:update id="fu_com_paperuni_demo_model_TdOrder" modelAttribute="tdOrder" multipart="true" path="/tdorders" versionField="none" z="user-managed">
         <field:select field="taskId" id="c_com_paperuni_demo_model_TdOrder_taskId" itemValue="id" items="${tdtasks}" path="/tdtasks" z="NqbQYn4YHNGDUQH6zLnPnrdrCog="/>
         <field:select field="subjectId" id="c_com_paperuni_demo_model_TdOrder_subjectId" itemValue="id" items="${tdsubjects}" path="/tdsubjects" z="kHvtI8QmkWHUQFMC5qZArGHmRL8="/>
         <field:input field="orderStatus" id="c_com_paperuni_demo_model_TdOrder_orderStatus" z="Vo+xJpPMcCfGTMPAxCEnsgNYnNU="/>
@@ -14,11 +13,11 @@
         <field:input field="customerId" id="c_com_paperuni_demo_model_TdOrder_customerId" validationMessageCode="field_invalid_integer" z="/enlMcT+yaNvVJ+kjX3goZqM2qk="/>
         <field:input field="courseLevel" id="c_com_paperuni_demo_model_TdOrder_courseLevel" z="tf7NyaNqUHDxoKrIdDYXLzOfjb4="/>
         <field:input field="coupon" id="c_com_paperuni_demo_model_TdOrder_coupon" z="TRZy0r8ncUB5/zGGJHXAGUK96cg="/>
-        <field:datetime dateTimePattern="${tdOrder_createdate_date_format}" field="createDate" id="c_com_paperuni_demo_model_TdOrder_createDate" z="Hf7qyMVUDtPyJBNMb7zUxaSKJXY=" disabled="true"/>
+        <field:datetime dateTimePattern="${tdOrder_createdate_date_format}" disabled="true" field="createDate" id="c_com_paperuni_demo_model_TdOrder_createDate" z="user-managed"/>
         <field:input field="file" id="c_com_paperuni_demo_model_TdOrder_file" type="file" z="user-managed"/>
         <field:input field="format" id="c_com_paperuni_demo_model_TdOrder_format" z="teCp98QyV89j2uRdQJRZr9XxQZk="/>
         <field:input field="referencing" id="c_com_paperuni_demo_model_TdOrder_referencing" z="GNfR6dfEJpQ4cIjUi2TF3rlfN1s="/>
         <field:input field="sourcesCount" id="c_com_paperuni_demo_model_TdOrder_sourcesCount" validationMessageCode="field_invalid_integer" z="b9I4XWZRbeRTkYX7DrpVUaYxbYo="/>
-        <field:input field="fileContentType" id="c_com_paperuni_demo_model_TdOrder_fileContentType" z="user-managed" render="false"/>
+        <field:input field="fileContentType" id="c_com_paperuni_demo_model_TdOrder_fileContentType" render="false" z="user-managed"/>
     </form:update>
 </div>

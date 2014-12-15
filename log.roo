@@ -36,3 +36,11 @@ quit
 database reverse engineer --schema paperdemo --testAutomatically --repository --package ~.model 
 quit
 // Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2014-12-12 21:53:15
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-12-14 11:07:51
+quit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2014-12-14 11:11:27
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-12-14 11:11:31
+help database reverse engineer
+database reverse engineer --package ~.model --schema paperdemo
+quit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2014-12-14 11:14:21

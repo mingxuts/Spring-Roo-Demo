@@ -6,8 +6,8 @@
         <table:table data="${tdtasks}" id="l_com_paperuni_demo_model_TdTask" path="/tdtasks" z="IFu/uvRbIFAJJzFcxgiOJtQxNrk=">
             <table:column id="c_com_paperuni_demo_model_TdTask_customerId" property="customerId" z="Kz6SLr00Sn+tDoW0s5zbvXZg1Zc="/>
             <table:column id="c_com_paperuni_demo_model_TdTask_orderId" property="orderId" z="RIHHFzKfrMsPTc7tBPNEjA53uIg="/>
-            <table:column id="c_com_paperuni_demo_model_TdTask_subjectId" property="subjectId" z="EPDjpLGiAOvNMfBFW0mbu2TKdmM="/>
             <table:column id="c_com_paperuni_demo_model_TdTask_writerId" property="writerId" z="LW1jCaZWCIO09aMFgY7M3H5gCt4="/>
+            <table:column id="c_com_paperuni_demo_model_TdTask_status" property="status" z="7ycDApEN+LaEx9TA8ulssDCtFl4="/>
         </table:table>
     </page:list>
 </div>

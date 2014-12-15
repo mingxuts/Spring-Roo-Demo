@@ -7,20 +7,15 @@ import com.paperuni.demo.model.TdOrder;
 import com.paperuni.demo.model.TdSubject;
 import com.paperuni.demo.model.TdTask;
 import java.util.Calendar;
-import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import org.springframework.format.annotation.DateTimeFormat;
 
 privileged aspect TdOrder_Roo_DbManaged {
-    
-    @OneToMany(mappedBy = "orderId")
-    private Set<TdTask> TdOrder.tdTasks;
     
     @ManyToOne
     @JoinColumn(name = "SubjectID", referencedColumnName = "ID", nullable = false)
@@ -80,14 +75,6 @@ privileged aspect TdOrder_Roo_DbManaged {
     
     @Column(name = "FileContentType", length = 50)
     private String TdOrder.fileContentType;
-    
-    public Set<TdTask> TdOrder.getTdTasks() {
-        return tdTasks;
-    }
-    
-    public void TdOrder.setTdTasks(Set<TdTask> tdTasks) {
-        this.tdTasks = tdTasks;
-    }
     
     public TdSubject TdOrder.getSubjectId() {
         return subjectId;

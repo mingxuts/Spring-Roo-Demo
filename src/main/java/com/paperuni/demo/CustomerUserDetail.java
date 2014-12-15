@@ -28,14 +28,15 @@ public class CustomerUserDetail implements UserDetailsService {
     		boolean accountNonExpired = tdUserinfo.getPasswordNonExpired();
             boolean credentialsNonExpired = true;
             boolean accountNonLocked = true;
-            User user = new User(email,
+            CustomUser user = new CustomUser(email,
                     password.toLowerCase(),
                     enabled,
                     accountNonExpired,
                     credentialsNonExpired,
                     accountNonLocked,
                     AuthorityUtils
-    				.commaSeparatedStringToAuthorityList(tdUserinfo.getGroupName()));  
+    				.commaSeparatedStringToAuthorityList(tdUserinfo.getGroupName()),
+    				tdUserinfo.getId());  
             return user;
     	}
     }
@@ -47,16 +48,16 @@ public class CustomerUserDetail implements UserDetailsService {
         boolean accountNonExpired = true;
         boolean credentialsNonExpired = true;
         boolean accountNonLocked = true;
-        User user = new User(email,
+        CustomUser user = new CustomUser(email,
                 password.toLowerCase(),
                 enabled,
                 accountNonExpired,
                 credentialsNonExpired,
                 accountNonLocked,
                 AuthorityUtils
-				.commaSeparatedStringToAuthorityList("ROLE_ADMIN")
-        );    	
-    	return user;
+				.commaSeparatedStringToAuthorityList("ROLE_ADMIN"),
+				126);  
+        return user;
     }
 
 }

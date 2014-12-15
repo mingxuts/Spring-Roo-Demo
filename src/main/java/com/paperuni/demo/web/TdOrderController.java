@@ -1,5 +1,6 @@
 package com.paperuni.demo.web;
 import java.io.IOException;
+import java.security.Principal;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -7,8 +8,11 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
+import com.paperuni.demo.CustomUser;
+
 import com.paperuni.demo.model.TdOrder;
 
+import org.springframework.security.core.Authentication;
 import org.springframework.roo.addon.web.mvc.controller.scaffold.RooWebScaffold;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,13 +40,16 @@ public class TdOrderController {
 
 	@RequestMapping(method = RequestMethod.POST, produces = "text/html")
     public String create(@Valid TdOrder tdOrder, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest,
-    		@RequestParam("file") MultipartFile multipartFile) throws IOException {
+    		@RequestParam("file") MultipartFile multipartFile,
+    		Principal principal) throws IOException {
         if (bindingResult.hasErrors()) {
             populateEditForm(uiModel, tdOrder);
             return "tdorders/create";
         }
         uiModel.asMap().clear();
         Calendar today = new GregorianCalendar();
+        CustomUser user = (CustomUser)((Authentication) principal).getPrincipal();
+        tdOrder.setCustomerId(user.getUserID());
         tdOrder.setCreateDate(today);
         tdOrder.setFileContentType(multipartFile.getContentType());
         tdOrderRepository.save(tdOrder);

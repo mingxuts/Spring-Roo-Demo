@@ -5,7 +5,6 @@ package com.paperuni.demo.model;
 
 import com.paperuni.demo.model.TdMessage;
 import com.paperuni.demo.model.TdOrder;
-import com.paperuni.demo.model.TdSubject;
 import com.paperuni.demo.model.TdTask;
 import com.paperuni.demo.model.TdUserinfo;
 import java.math.BigDecimal;
@@ -17,6 +16,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 import org.springframework.format.annotation.DateTimeFormat;
 
 privileged aspect TdTask_Roo_DbManaged {
@@ -28,20 +28,16 @@ privileged aspect TdTask_Roo_DbManaged {
     private Set<TdOrder> TdTask.tdOrders;
     
     @ManyToOne
-    @JoinColumn(name = "OrderID", referencedColumnName = "ID", nullable = false)
-    private TdOrder TdTask.orderId;
-    
-    @ManyToOne
-    @JoinColumn(name = "SubjectID", referencedColumnName = "ID")
-    private TdSubject TdTask.subjectId;
-    
-    @ManyToOne
     @JoinColumn(name = "WriterID", referencedColumnName = "ID")
     private TdUserinfo TdTask.writerId;
     
     @ManyToOne
     @JoinColumn(name = "CustomerID", referencedColumnName = "ID")
     private TdUserinfo TdTask.customerId;
+    
+    @Column(name = "OrderID")
+    @NotNull
+    private Integer TdTask.orderId;
     
     @Column(name = "Status", length = 88)
     private String TdTask.status;
@@ -58,6 +54,9 @@ privileged aspect TdTask_Roo_DbManaged {
     
     @Column(name = "WordCount")
     private Integer TdTask.wordCount;
+    
+    @Column(name = "SubjectID")
+    private Integer TdTask.subjectId;
     
     @Column(name = "Note", length = 255)
     private String TdTask.note;
@@ -109,6 +108,9 @@ privileged aspect TdTask_Roo_DbManaged {
     @Column(name = "AllowAllSubject")
     private Boolean TdTask.allowAllSubject;
     
+    @Column(name = "FileContentType", length = 50)
+    private String TdTask.fileContentType;
+    
     public Set<TdMessage> TdTask.getTdMessages() {
         return tdMessages;
     }
@@ -125,22 +127,6 @@ privileged aspect TdTask_Roo_DbManaged {
         this.tdOrders = tdOrders;
     }
     
-    public TdOrder TdTask.getOrderId() {
-        return orderId;
-    }
-    
-    public void TdTask.setOrderId(TdOrder orderId) {
-        this.orderId = orderId;
-    }
-    
-    public TdSubject TdTask.getSubjectId() {
-        return subjectId;
-    }
-    
-    public void TdTask.setSubjectId(TdSubject subjectId) {
-        this.subjectId = subjectId;
-    }
-    
     public TdUserinfo TdTask.getWriterId() {
         return writerId;
     }
@@ -155,6 +141,14 @@ privileged aspect TdTask_Roo_DbManaged {
     
     public void TdTask.setCustomerId(TdUserinfo customerId) {
         this.customerId = customerId;
+    }
+    
+    public Integer TdTask.getOrderId() {
+        return orderId;
+    }
+    
+    public void TdTask.setOrderId(Integer orderId) {
+        this.orderId = orderId;
     }
     
     public String TdTask.getStatus() {
@@ -187,6 +181,14 @@ privileged aspect TdTask_Roo_DbManaged {
     
     public void TdTask.setWordCount(Integer wordCount) {
         this.wordCount = wordCount;
+    }
+    
+    public Integer TdTask.getSubjectId() {
+        return subjectId;
+    }
+    
+    public void TdTask.setSubjectId(Integer subjectId) {
+        this.subjectId = subjectId;
     }
     
     public String TdTask.getNote() {
@@ -315,6 +317,14 @@ privileged aspect TdTask_Roo_DbManaged {
     
     public void TdTask.setAllowAllSubject(Boolean allowAllSubject) {
         this.allowAllSubject = allowAllSubject;
+    }
+    
+    public String TdTask.getFileContentType() {
+        return fileContentType;
+    }
+    
+    public void TdTask.setFileContentType(String fileContentType) {
+        this.fileContentType = fileContentType;
     }
     
 }

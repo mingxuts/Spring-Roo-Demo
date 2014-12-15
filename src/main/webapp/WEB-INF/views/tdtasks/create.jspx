@@ -6,17 +6,17 @@
         <field:simple field="tdMessages" id="c_com_paperuni_demo_model_TdTask_tdMessages" messageCode="entity_reference_not_managed" messageCodeAttribute="Td Message" z="PM0fR9u7a6WDnF6N+fm/NSasduM="/>
         <field:simple field="tdOrders" id="c_com_paperuni_demo_model_TdTask_tdOrders" messageCode="entity_reference_not_managed" messageCodeAttribute="Td Order" z="hM/MnM++20/58s7zMcwCmTvUyrY="/>
         <field:select field="customerId" id="c_com_paperuni_demo_model_TdTask_customerId" itemValue="id" items="${tduserinfoes}" path="/tduserinfoes" z="05EOxJynYN5eCrcZcMddELbBSD8="/>
-        <field:select field="orderId" id="c_com_paperuni_demo_model_TdTask_orderId" itemValue="id" items="${tdorders}" path="/tdorders" z="J0Qhluw00U9lglKfLcG/Shy23d4="/>
-        <field:select field="subjectId" id="c_com_paperuni_demo_model_TdTask_subjectId" itemValue="id" items="${tdsubjects}" path="/tdsubjects" z="feD2xdPo4K5/4zsc8EN68cG8Pug="/>
+        <field:input field="orderId" id="c_com_paperuni_demo_model_TdTask_orderId" required="true" validationMessageCode="field_invalid_integer" z="NuudewnU2IzhTs/ApjxDHA3p4LM="/>
+        <field:input field="subjectId" id="c_com_paperuni_demo_model_TdTask_subjectId" validationMessageCode="field_invalid_integer" z="K3oLn7U9DSjYby39uNDJbVXCvcU="/>
         <field:select field="writerId" id="c_com_paperuni_demo_model_TdTask_writerId" itemValue="id" items="${tduserinfoes}" path="/tduserinfoes" z="/eOVeZaMX9Xuib6L5UO1Rjs6ubI="/>
-        <field:input field="status" id="c_com_paperuni_demo_model_TdTask_status" z="8loK+8VCcm+2CrLd9haI58hfL1Y="/>
+        <field:input disabled="true" field="status" id="c_com_paperuni_demo_model_TdTask_status" z="user-managed"/>
         <field:datetime dateTimePattern="${tdTask_startdate_date_format}" field="startDate" id="c_com_paperuni_demo_model_TdTask_startDate" z="N5koiZT55usztpeFj2TD3OTpgy4="/>
         <field:datetime dateTimePattern="${tdTask_deadline_date_format}" field="deadLine" id="c_com_paperuni_demo_model_TdTask_deadLine" z="6c/RW9xVGIGjLVDkzFH4EpbHqZE="/>
         <field:input field="wordCount" id="c_com_paperuni_demo_model_TdTask_wordCount" validationMessageCode="field_invalid_integer" z="1RH80QCLIplhAxXirGBMv/eN+EA="/>
         <field:input field="note" id="c_com_paperuni_demo_model_TdTask_note" z="7+lguN6nQxtHQFexXZGXPjIn4XA="/>
         <field:input field="courseLevel" id="c_com_paperuni_demo_model_TdTask_courseLevel" z="fhQke76dUJak18Xm4psudCtmsOE="/>
         <field:input field="coupon" id="c_com_paperuni_demo_model_TdTask_coupon" z="r2mtGTYOtgVcOygMZX4uS6A+9Wk="/>
-        <field:datetime dateTimePattern="${tdTask_createdate_date_format}" field="createDate" id="c_com_paperuni_demo_model_TdTask_createDate" z="N11dKfGLr5AlOUAyvaHOlCj3Suc="/>
+        <field:datetime dateTimePattern="${tdTask_createdate_date_format}" field="createDate" id="c_com_paperuni_demo_model_TdTask_createDate" render="false" z="user-managed"/>
         <field:input field="file" id="c_com_paperuni_demo_model_TdTask_file" z="icYnPmeY1/N9kT/X+ALKd9THC78="/>
         <field:input field="format" id="c_com_paperuni_demo_model_TdTask_format" z="qEj8Pz34QdP4j1j67jziniR4YNo="/>
         <field:input field="referencing" id="c_com_paperuni_demo_model_TdTask_referencing" z="OyADlp9lZkqi/A8zsY7pd06b9t4="/>
@@ -29,6 +29,7 @@
         <field:input field="feedBack" id="c_com_paperuni_demo_model_TdTask_feedBack" z="BD4o8E457dmFY6dBD5ajQ4QX6ro="/>
         <field:input field="feedBackDescription" id="c_com_paperuni_demo_model_TdTask_feedBackDescription" z="SXoTAa52/l2xeRQh9iyPAhEGWh4="/>
         <field:checkbox field="allowAllSubject" id="c_com_paperuni_demo_model_TdTask_allowAllSubject" z="Nt0sKgbRWUMiZM9HYY6+6fI6ZIc="/>
+        <field:input field="fileContentType" id="c_com_paperuni_demo_model_TdTask_fileContentType" z="EsN7QdYQTApkHd41SbBCukYSDhY="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_com_paperuni_demo_model_TdTask" render="${not empty dependencies}" z="yZxtvk+5wOiQt18CZezUtlmWj7M="/>
 </div>

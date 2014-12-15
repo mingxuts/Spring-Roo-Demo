@@ -6,8 +6,8 @@
         <field:simple field="tdMessages" id="c_com_paperuni_demo_model_TdTask_tdMessages" messageCode="entity_reference_not_managed" messageCodeAttribute="Td Message" z="PM0fR9u7a6WDnF6N+fm/NSasduM="/>
         <field:simple field="tdOrders" id="c_com_paperuni_demo_model_TdTask_tdOrders" messageCode="entity_reference_not_managed" messageCodeAttribute="Td Order" z="hM/MnM++20/58s7zMcwCmTvUyrY="/>
         <field:select field="customerId" id="c_com_paperuni_demo_model_TdTask_customerId" itemValue="id" items="${tduserinfoes}" path="/tduserinfoes" z="05EOxJynYN5eCrcZcMddELbBSD8="/>
-        <field:select field="orderId" id="c_com_paperuni_demo_model_TdTask_orderId" itemValue="id" items="${tdorders}" path="/tdorders" z="J0Qhluw00U9lglKfLcG/Shy23d4="/>
-        <field:select field="subjectId" id="c_com_paperuni_demo_model_TdTask_subjectId" itemValue="id" items="${tdsubjects}" path="/tdsubjects" z="feD2xdPo4K5/4zsc8EN68cG8Pug="/>
+        <field:input field="orderId" id="c_com_paperuni_demo_model_TdTask_orderId" required="true" validationMessageCode="field_invalid_integer" z="NuudewnU2IzhTs/ApjxDHA3p4LM="/>
+        <field:input field="subjectId" id="c_com_paperuni_demo_model_TdTask_subjectId" validationMessageCode="field_invalid_integer" z="K3oLn7U9DSjYby39uNDJbVXCvcU="/>
         <field:select field="writerId" id="c_com_paperuni_demo_model_TdTask_writerId" itemValue="id" items="${tduserinfoes}" path="/tduserinfoes" z="/eOVeZaMX9Xuib6L5UO1Rjs6ubI="/>
         <field:input field="status" id="c_com_paperuni_demo_model_TdTask_status" z="8loK+8VCcm+2CrLd9haI58hfL1Y="/>
         <field:datetime dateTimePattern="${tdTask_startdate_date_format}" field="startDate" id="c_com_paperuni_demo_model_TdTask_startDate" z="N5koiZT55usztpeFj2TD3OTpgy4="/>
@@ -29,5 +29,6 @@
         <field:input field="feedBack" id="c_com_paperuni_demo_model_TdTask_feedBack" z="BD4o8E457dmFY6dBD5ajQ4QX6ro="/>
         <field:input field="feedBackDescription" id="c_com_paperuni_demo_model_TdTask_feedBackDescription" z="SXoTAa52/l2xeRQh9iyPAhEGWh4="/>
         <field:checkbox field="allowAllSubject" id="c_com_paperuni_demo_model_TdTask_allowAllSubject" z="Nt0sKgbRWUMiZM9HYY6+6fI6ZIc="/>
+        <field:input field="fileContentType" id="c_com_paperuni_demo_model_TdTask_fileContentType" z="EsN7QdYQTApkHd41SbBCukYSDhY="/>
     </form:update>
 </div>

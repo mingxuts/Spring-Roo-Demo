@@ -5,7 +5,6 @@ package com.paperuni.demo.model;
 
 import com.paperuni.demo.model.TdOrder;
 import com.paperuni.demo.model.TdSubject;
-import com.paperuni.demo.model.TdTask;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.OneToMany;
@@ -15,9 +14,6 @@ privileged aspect TdSubject_Roo_DbManaged {
     
     @OneToMany(mappedBy = "subjectId")
     private Set<TdOrder> TdSubject.tdOrders;
-    
-    @OneToMany(mappedBy = "subjectId")
-    private Set<TdTask> TdSubject.tdTasks;
     
     @Column(name = "Name", length = 20)
     @NotNull
@@ -32,14 +28,6 @@ privileged aspect TdSubject_Roo_DbManaged {
     
     public void TdSubject.setTdOrders(Set<TdOrder> tdOrders) {
         this.tdOrders = tdOrders;
-    }
-    
-    public Set<TdTask> TdSubject.getTdTasks() {
-        return tdTasks;
-    }
-    
-    public void TdSubject.setTdTasks(Set<TdTask> tdTasks) {
-        this.tdTasks = tdTasks;
     }
     
     public String TdSubject.getName() {

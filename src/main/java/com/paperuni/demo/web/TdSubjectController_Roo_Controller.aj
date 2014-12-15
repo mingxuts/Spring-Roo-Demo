@@ -6,7 +6,6 @@ package com.paperuni.demo.web;
 import com.paperuni.demo.model.TdOrderRepository;
 import com.paperuni.demo.model.TdSubject;
 import com.paperuni.demo.model.TdSubjectRepository;
-import com.paperuni.demo.model.TdTaskRepository;
 import com.paperuni.demo.web.TdSubjectController;
 import java.io.UnsupportedEncodingException;
 import javax.servlet.http.HttpServletRequest;
@@ -28,9 +27,6 @@ privileged aspect TdSubjectController_Roo_Controller {
     
     @Autowired
     TdOrderRepository TdSubjectController.tdOrderRepository;
-    
-    @Autowired
-    TdTaskRepository TdSubjectController.tdTaskRepository;
     
     @RequestMapping(method = RequestMethod.POST, produces = "text/html")
     public String TdSubjectController.create(@Valid TdSubject tdSubject, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
@@ -100,7 +96,6 @@ privileged aspect TdSubjectController_Roo_Controller {
     void TdSubjectController.populateEditForm(Model uiModel, TdSubject tdSubject) {
         uiModel.addAttribute("tdSubject", tdSubject);
         uiModel.addAttribute("tdorders", tdOrderRepository.findAll());
-        uiModel.addAttribute("tdtasks", tdTaskRepository.findAll());
     }
     
     String TdSubjectController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

@@ -27,5 +27,6 @@
         <field:display field="feedBack" id="s_com_paperuni_demo_model_TdTask_feedBack" object="${tdtask}" z="DV6CyVSm5OSVmgsjH/yKUb0w4HU="/>
         <field:display field="feedBackDescription" id="s_com_paperuni_demo_model_TdTask_feedBackDescription" object="${tdtask}" z="uwEFZLjQqcWcgahObod96koit6U="/>
         <field:display field="allowAllSubject" id="s_com_paperuni_demo_model_TdTask_allowAllSubject" object="${tdtask}" z="/y2VfsZC671PpB4ruxFPxvhauPI="/>
+        <field:display field="fileContentType" id="s_com_paperuni_demo_model_TdTask_fileContentType" object="${tdtask}" z="K8ivXlYYYtrRcLd6b7+6JV7oA50="/>
     </page:show>
 </div>

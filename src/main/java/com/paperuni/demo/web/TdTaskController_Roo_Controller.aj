@@ -5,7 +5,6 @@ package com.paperuni.demo.web;
 
 import com.paperuni.demo.model.TdMessageRepository;
 import com.paperuni.demo.model.TdOrderRepository;
-import com.paperuni.demo.model.TdSubjectRepository;
 import com.paperuni.demo.model.TdTask;
 import com.paperuni.demo.model.TdTaskRepository;
 import com.paperuni.demo.model.TdUserinfoRepository;
@@ -37,9 +36,6 @@ privileged aspect TdTaskController_Roo_Controller {
     TdOrderRepository TdTaskController.tdOrderRepository;
     
     @Autowired
-    TdSubjectRepository TdTaskController.tdSubjectRepository;
-    
-    @Autowired
     TdUserinfoRepository TdTaskController.tdUserinfoRepository;
     
     @RequestMapping(method = RequestMethod.POST, produces = "text/html")
@@ -51,12 +47,6 @@ privileged aspect TdTaskController_Roo_Controller {
         uiModel.asMap().clear();
         tdTaskRepository.save(tdTask);
         return "redirect:/tdtasks/" + encodeUrlPathSegment(tdTask.getId().toString(), httpServletRequest);
-    }
-    
-    @RequestMapping(params = "form", produces = "text/html")
-    public String TdTaskController.createForm(Model uiModel) {
-        populateEditForm(uiModel, new TdTask());
-        return "tdtasks/create";
     }
     
     @RequestMapping(value = "/{id}", produces = "text/html")
@@ -120,7 +110,6 @@ privileged aspect TdTaskController_Roo_Controller {
         addDateTimeFormatPatterns(uiModel);
         uiModel.addAttribute("tdmessages", tdMessageRepository.findAll());
         uiModel.addAttribute("tdorders", tdOrderRepository.findAll());
-        uiModel.addAttribute("tdsubjects", tdSubjectRepository.findAll());
         uiModel.addAttribute("tduserinfoes", tdUserinfoRepository.findAll());
     }
     
