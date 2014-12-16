@@ -13,6 +13,10 @@
   <link href="${tundra_url}" rel="stylesheet" type="text/css"/>
   <link href="${roo_css_url}" media="screen" rel="stylesheet" type="text/css"/>
   <link href="${favicon}" rel="SHORTCUT ICON"/>
+  
+  <!-- Get datatable css -->
+  <spring:url value="/resources/styles/gvnix-datatables.css" var="datatables_css_url" />
+  <link href="${datatables_css_url}" rel="stylesheet" type="text/css" />
 
   <!-- Get the user local from the page context (it was set by Spring MVC's locale resolver) -->
   <c:set var="userLocale">
