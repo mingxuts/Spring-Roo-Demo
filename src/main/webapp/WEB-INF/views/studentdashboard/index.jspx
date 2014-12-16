@@ -5,6 +5,11 @@
 	
 	<c:url value="/home/profile" var="profile_urL" />
 	<c:url value="/tdorders?form" var="placeorder_url" />
+	<c:url value="/studentdashboard/listorders" var="myorders_url">
+		<c:param name="page" value="1" />
+		<c:param name="size" value="10" />
+	</c:url>
+	
      <div class="page-header">
          <h3>Dashboard</h3>
          <p><spring:message code="student_dashboard_hasnotverified" /></p>
@@ -12,7 +17,7 @@
 	<div>
 		 <p><a href="${profile_urL}" >My Profile</a></p>
 		 <p><a href="${placeorder_url}" >Place Order</a></p>
-		 <p><a href="/" >My Orders</a></p>
+		 <p><a href="${myorders_url}" >My Orders</a></p>
 		 <p><a href="/" >Payment Instructions</a></p>
 		 <p><a href="/" >Chat Room</a></p>
 	</div>
