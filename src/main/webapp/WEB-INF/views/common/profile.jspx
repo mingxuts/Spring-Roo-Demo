@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_paperuni_demo_model_TdUserinfo" object="${tduserinfo}" path="/tduserinfoes" z="k4DpfpVbTZfT0FpF69sLPL0rtys=">
+        <field:display field="email" id="s_com_paperuni_demo_model_TdUserinfo_email" object="${tduserinfo}" z="cByWLSQJytTPBbTq62yVaryEvNY="/>
+        <field:display field="loginPassword" id="s_com_paperuni_demo_model_TdUserinfo_loginPassword" object="${tduserinfo}" render="false"/>
+        <field:display field="groupName" id="s_com_paperuni_demo_model_TdUserinfo_groupName" object="${tduserinfo}" z="vNHMb/klc8gJBXV5mfTW0llXu+8=" render="false"/>
+        <field:display field="createBy" id="s_com_paperuni_demo_model_TdUserinfo_createBy" object="${tduserinfo}" z="O0WTl7iINA/oE1N9Mdgoxu6JOvs=" render="false"/>
+        <field:display calendar="true" dateTimePattern="${tdUserinfo_createdate_date_format}" field="createDate" id="s_com_paperuni_demo_model_TdUserinfo_createDate" object="${tduserinfo}" z="LyuxrKA0/jHgLPklR81klWdwcc8=" render="false"/>
+        <field:display field="preferName" id="s_com_paperuni_demo_model_TdUserinfo_preferName" object="${tduserinfo}" z="j6/J1KCMfRiQj2M+Kot36SjhFOU="/>
+        <field:display field="country" id="s_com_paperuni_demo_model_TdUserinfo_country" object="${tduserinfo}" z="CzD6V2t3Zw583C6MP85oUcKWt28="/>
+        <field:display field="city" id="s_com_paperuni_demo_model_TdUserinfo_city" object="${tduserinfo}" z="V01W3gCXxBCtihUjMah0Qn/cHPg="/>
+        <field:display field="contactType" id="s_com_paperuni_demo_model_TdUserinfo_contactType" object="${tduserinfo}" z="e2TQ1EpuJa08s62kJYPdtNJlLhk="/>
+        <field:display field="contactId" id="s_com_paperuni_demo_model_TdUserinfo_contactId" object="${tduserinfo}" z="zzEIi2qBGzX7Reej+TnxlemRFfY="/>
+        <field:display field="emailCode" id="s_com_paperuni_demo_model_TdUserinfo_emailCode" object="${tduserinfo}" z="GTYJuX+oTbpw9oFtILwgqWORDxE=" render="false"/>
+        <field:display field="passwordNonExpired" id="s_com_paperuni_demo_model_TdUserinfo_passwordNonExpired" object="${tduserinfo}" z="B8NFHHM9sY6TAaGFi7kDzLHVbYw=" render="false"/>
+        <field:display field="hasVerified" id="s_com_paperuni_demo_model_TdUserinfo_hasVerified" object="${tduserinfo}" z="O3nwUNBOyUULPLW+e9zk8Wrgrr0="/>
+        <field:display field="special" id="s_com_paperuni_demo_model_TdUserinfo_special" object="${tduserinfo}" z="TmgqRHyggVQQtnwbLc6MDFy6VT4=" render="false"/>
+    </page:show>
+</div>

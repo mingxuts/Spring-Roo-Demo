@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" version="2.0">
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:c="http://java.sun.com/jsp/jstl/core" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
 	
+	<c:url value="/home/profile" var="profile_urL" />
+	<c:url value="/tdorders?form" var="placeorder_url" />
+     <div class="page-header">
+         <h3>Dashboard</h3>
+         <p><spring:message code="student_dashboard_hasnotverified" /></p>
+     </div>
 	<div>
-		<p><a href="/home/profile" >My Profile</a></p>
-		 <p><a href="/tdorders?form" >Place Order</a></p>
+		 <p><a href="${profile_urL}" >My Profile</a></p>
+		 <p><a href="${placeorder_url}" >Place Order</a></p>
 		 <p><a href="/" >My Orders</a></p>
 		 <p><a href="/" >Payment Instructions</a></p>
 		 <p><a href="/" >Chat Room</a></p>
