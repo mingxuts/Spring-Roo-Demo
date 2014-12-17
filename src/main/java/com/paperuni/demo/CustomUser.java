@@ -11,8 +11,6 @@ import com.paperuni.demo.model.TdUserinfoRepository;
 
 public class CustomUser extends User {
 	
-	@Autowired
-	TdUserinfoRepository tdUserinfoRepository;
 	
 	private final int userID;
 
@@ -28,7 +26,7 @@ public class CustomUser extends User {
 		this.userID = userID;
 	}	
 
-	public TdUserinfo loadUserinfo(){
+	public TdUserinfo loadUserinfo(TdUserinfoRepository tdUserinfoRepository){
 		TdUserinfo userinfo = tdUserinfoRepository.findOne(this.getUserID());
 		return userinfo;
 	}

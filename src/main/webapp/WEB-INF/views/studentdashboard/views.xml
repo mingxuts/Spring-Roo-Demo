@@ -4,4 +4,8 @@
     <definition extends="default" name="studentdashboard/index">
         <put-attribute name="body" value="/WEB-INF/views/studentdashboard/index.jspx"/>
     </definition>
+    
+    <definition extends="default" name="studentdashboard/showmessage">
+        <put-attribute name="body" value="/WEB-INF/views/studentdashboard/showmessage.jspx"/>
+    </definition>    
 </tiles-definitions>

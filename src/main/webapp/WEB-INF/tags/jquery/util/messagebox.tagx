@@ -1,0 +1,39 @@
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" xmlns:spring="http://www.springframework.org/tags" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:fmt="http://java.sun.com/jsp/jstl/fmt" version="2.0">
+  <jsp:output omit-xml-declaration="yes" />
+  
+  <jsp:directive.attribute name="id" type="java.lang.String" required="true" rtexprvalue="true" description="The identifier for this tag (do not change!)" />
+  <jsp:directive.attribute name="data" type="java.util.Collection" required="true" rtexprvalue="true" description="The collection to be displayed in the table" />
+  
+  <jsp:doBody />
+  
+  <spring:eval var="rowCounter" expression="1" />
+  
+  
+  <c:forEach items="${data}" var="item">
+  	<fmt:formatDate value="${item.createDate.time}" type="date" dateStyle="short" var="formattedDate"/>
+  	
+  	<section id="msg${rowCounter}">
+ 		<div class="panel panel-default" id="msgpanel${rowCounter}">
+			<div class="panel-heading panel-display">
+				<dl class="dl-horizontal">
+					<dt>ID</dt>
+					<dd>${item.id.id}</dd>
+					<dt>Task</dt>
+					<dd>${item.id.taskId}</dd>
+					<dt>Date</dt>
+					<dd>${formattedDate}</dd>
+					<dt>Link</dt>
+					<dd><a href="http://www.paperuni.com">paperuni.com</a></dd>						
+				</dl>
+			</div>
+			<div class="panel-body">
+				<p>${item.body}</p>
+			</div>  		
+  		</div>
+  	</section>
+  	
+  </c:forEach>  
+  <c:if test="${not empty maxPages}">
+    <util:pagination maxPages="${maxPages}" page="${param.page}" size="${param.size}" />
+  </c:if>
+</jsp:root>
