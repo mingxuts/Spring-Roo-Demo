@@ -22,5 +22,16 @@ public class MessageSpecifications {
 			}
 		};
 	}
+	
+	public static Specification<TdMessage> byTaskId(final int taskId){
+		
+		return new Specification<TdMessage>(){
+			
+			@Override
+			public Predicate toPredicate(Root<TdMessage> root, CriteriaQuery<?> query, CriteriaBuilder cb){
+				return cb.equal(root.get("taskId").<Integer>get("id"), new Integer(taskId));
+			}
+		};
+	}
 
 }

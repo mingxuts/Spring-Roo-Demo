@@ -13,6 +13,7 @@
 		<c:param name="page" value="1" />
 		<c:param name="size" value="10" />	
 	</c:url>
+	<c:url value="/studentdashboard/sendmsg" var="sendmsg_url" />
 	
      <div class="page-header">
          <h3>Dashboard</h3>
@@ -22,7 +23,7 @@
 		 <p><a href="${profile_urL}" >My Profile</a></p>
 		 <p><a href="${placeorder_url}" >Place Order</a></p>
 		 <p><a href="${myorders_url}" >My Orders</a></p>
-		 <p><a href="/" >Payment Instructions</a></p>
+		 <p><a href="${sendmsg_url }" >Send Message</a></p>
 		 <p><a href="${mymessages_url}" >Chat Room</a></p>
 	</div>
 </div>

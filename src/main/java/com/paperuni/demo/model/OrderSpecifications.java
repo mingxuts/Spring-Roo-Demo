@@ -20,5 +20,18 @@ public class OrderSpecifications {
 			}
 		};
 	}
+	
+	public static Specification<TdOrder> isPendingAndUnassign(){
+		
+		return new Specification<TdOrder>(){
+			
+			@Override
+			public Predicate toPredicate(Root<TdOrder> root, CriteriaQuery<?> query, CriteriaBuilder cb){
+				Predicate pending = cb.equal(root.<String>get("orderStatus"), "PENDING");
+				Predicate unassign = cb.and(pending, cb.isNull(root.get("taskId")));
+				return unassign;
+			}
+		};
+	}
 
 }

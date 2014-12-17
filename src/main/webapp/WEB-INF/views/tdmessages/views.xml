@@ -13,4 +13,7 @@
 <definition extends="default" name="tdmessages/update">
         <put-attribute name="body" value="/WEB-INF/views/tdmessages/update.jspx"/>
     </definition>
+    <definition extends="default" name="tdmessages/send">
+        <put-attribute name="body" value="/WEB-INF/views/tdmessages/send.jspx"/>
+    </definition>    
 </tiles-definitions>

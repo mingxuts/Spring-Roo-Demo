@@ -3,9 +3,18 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
 	
+	<c:url value="/home/profile" var="user_url" />
+	<c:url value="/admindashboard/enquiry" var="enquiry_url" >
+		<c:param name="page" value="1" />
+		<c:param name="size" value="10" />		
+	</c:url>
+	
+	<div class="page-header">
+		<h2>Dashboard</h2>
+	</div>
 	<div>
-		<p><a href='<c:url value="/home/profile" />' >My Profile</a></p>
-		<p><a href="/" >New Order Inquiry</a></p>
+		<p><a href="${user_url}" >My Profile</a></p>
+		<p><a href="${enquiry_url}" >New Order Inquiry</a></p>
 		<p><a href="/home/profile" >Manage Coupon</a></p>
 		<p><a href="/home/profile" >Orders</a></p>
 		<p><a href="/home/profile" >Create Subadmin</a></p>

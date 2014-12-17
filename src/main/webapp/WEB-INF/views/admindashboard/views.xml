@@ -4,4 +4,7 @@
     <definition extends="default" name="admindashboard/index">
         <put-attribute name="body" value="/WEB-INF/views/admindashboard/index.jspx"/>
     </definition>
+    <definition extends="default" name="admindashboard/enquiry">
+        <put-attribute name="body" value="/WEB-INF/views/admindashboard/enquiry.jspx"/>
+    </definition>    
 </tiles-definitions>
