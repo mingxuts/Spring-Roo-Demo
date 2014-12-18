@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:c="http://java.sun.com/jsp/jstl/core"  version="2.0" >
+
+	<jsp:directive.page contentType="text/html;charset=UTF-8"/>
+	<jsp:output omit-xml-declaration="yes"/>
+	
+	<script type="text/javascript">
+		function createTask(event){
+			var $row = $(event.target).parent().parent();
+			var url = "/demo/tdtasks?form=";
+			var s = $row.find("td.utilbox a").attr("href");
+			var temparry = s.split("/");
+			var location = url + temparry[temparry.length-1];
+			window.location.assign(location);
+		}
+		
+		$(function(){
+			
+			var htmlbutton = "<td><button>Create Task</button></td>";
+			
+			$(".dataTable tbody tr").not(':last').prepend($(htmlbutton));
+			
+			$(".dataTable tbody button").addClass("btn btn-info btn-sm");		
+			
+			$(".dataTable tbody button").click(function(event){
+				createTask(event);
+			});
+			
+		})
+	</script>
+
+
+</div>

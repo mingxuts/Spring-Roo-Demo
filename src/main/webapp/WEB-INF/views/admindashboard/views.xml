@@ -6,5 +6,6 @@
     </definition>
     <definition extends="default" name="admindashboard/enquiry">
         <put-attribute name="body" value="/WEB-INF/views/tdorders/list.jspx"/>
+        <put-attribute name="customscript" value="/WEB-INF/views/admindashboard/enquirybottomscripts.jspx" />
     </definition>    
 </tiles-definitions>

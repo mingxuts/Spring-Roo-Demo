@@ -38,16 +38,7 @@ privileged aspect TdTaskController_Roo_Controller {
     @Autowired
     TdUserinfoRepository TdTaskController.tdUserinfoRepository;
     
-    @RequestMapping(method = RequestMethod.POST, produces = "text/html")
-    public String TdTaskController.create(@Valid TdTask tdTask, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            populateEditForm(uiModel, tdTask);
-            return "tdtasks/create";
-        }
-        uiModel.asMap().clear();
-        tdTaskRepository.save(tdTask);
-        return "redirect:/tdtasks/" + encodeUrlPathSegment(tdTask.getId().toString(), httpServletRequest);
-    }
+    
     
     @RequestMapping(value = "/{id}", produces = "text/html")
     public String TdTaskController.show(@PathVariable("id") Integer id, Model uiModel) {
