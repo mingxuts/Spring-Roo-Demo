@@ -62,5 +62,10 @@
 	<footer class="bs-footer" role="contentinfo">
 		<tiles:insertAttribute ignore="true" name="footer" />
 	</footer>
+	
+	
+	<!-- For customize page java scripts -->
+	<tiles:insertAttribute ignore="true" name="customscript" />
+
 	</body>
 </html>

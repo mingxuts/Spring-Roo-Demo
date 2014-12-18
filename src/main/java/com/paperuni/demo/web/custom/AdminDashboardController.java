@@ -42,7 +42,7 @@ public class AdminDashboardController {
             uiModel.addAttribute("tdorders", tdOrderRepository.findAll(isPendingAndUnassign()));
         }
         //addDateTimeFormatPatterns(uiModel);
-        return "tdorders/list";
+        return "admindashboard/enquiry";
     }
 	
 	Specification<TdOrder> isPendingAndUnassign(){

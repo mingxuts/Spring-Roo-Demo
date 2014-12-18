@@ -5,6 +5,6 @@
         <put-attribute name="body" value="/WEB-INF/views/admindashboard/index.jspx"/>
     </definition>
     <definition extends="default" name="admindashboard/enquiry">
-        <put-attribute name="body" value="/WEB-INF/views/admindashboard/enquiry.jspx"/>
+        <put-attribute name="body" value="/WEB-INF/views/tdorders/list.jspx"/>
     </definition>    
 </tiles-definitions>

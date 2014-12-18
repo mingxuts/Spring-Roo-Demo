@@ -7,5 +7,14 @@
     
     <definition extends="default" name="studentdashboard/showmessage">
         <put-attribute name="body" value="/WEB-INF/views/studentdashboard/showmessage.jspx"/>
-    </definition>    
+    </definition>   
+    
+    <definition extends="default" name="studentdashboard/listorders">
+        <put-attribute name="body" value="/WEB-INF/views/tdorders/list.jspx"/>
+    </definition>  
+    
+    <definition extends="default" name="studentdashboard/sendmsg">
+        <put-attribute name="body" value="/WEB-INF/views/tdmessages/send.jspx"/>
+        <put-attribute name="customscript" value="/WEB-INF/views/studentdashboard/sendmsgbottomscripts.jspx" />
+    </definition>           
 </tiles-definitions>

@@ -65,7 +65,7 @@ public class StudentDashboardController {
             uiModel.addAttribute("tdorders", tdOrderRepository.findAll(OrderSpecifications.byCustomer(customerId)));
         }
         addDateTimeFormatPatterns(uiModel);
-        return "tdorders/list";
+        return "studentdashboard/listorders";
     }
 	
 	@RequestMapping(value="/listmessages", method=RequestMethod.GET, produces="text/html")
@@ -91,14 +91,14 @@ public class StudentDashboardController {
 	@RequestMapping(value="/sendmsg", method=RequestMethod.GET)
 	public String sendMsgForm(Model uiModel){
 		populateEditForm(uiModel, new TdMessage());
-		return "tdmessages/send";
+		return "studentdashboard/sendmsg";
 	}
 	
 	@RequestMapping(value="/sendmsg", method=RequestMethod.POST)
 	public String sendMsg(@Valid TdMessage tdMessage, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
             populateEditForm(uiModel, tdMessage);
-            return "tdmessages/send";
+            return "studentdashboard/sendmsg";
         }
         uiModel.asMap().clear();
         Calendar today = new GregorianCalendar();
