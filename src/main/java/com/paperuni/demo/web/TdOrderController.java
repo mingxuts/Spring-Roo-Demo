@@ -1,16 +1,22 @@
 package com.paperuni.demo.web;
 import java.io.IOException;
 import java.security.Principal;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import com.paperuni.demo.CustomUser;
-
 import com.paperuni.demo.model.TdOrder;
+import com.paperuni.demo.web.selectoption.Courselevel;
+import com.paperuni.demo.web.selectoption.Presentationformat;
+import com.paperuni.demo.web.selectoption.Referencingformat;
+import com.paperuni.demo.web.selectoption.Sourcescount;
+import com.paperuni.demo.web.selectoption.Wordcount;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.roo.addon.web.mvc.controller.scaffold.RooWebScaffold;
@@ -35,6 +41,11 @@ public class TdOrderController {
 	@RequestMapping(params = "form", produces = "text/html")
     public String createForm(Model uiModel) {
         populateEditForm(uiModel, new TdOrder());
+        uiModel.addAttribute("wordcountvalues", Wordcount.getAllWordCountValues());
+        uiModel.addAttribute("courselevels", Courselevel.getAllCourses());
+        uiModel.addAttribute("sourcescount", Sourcescount.getAllSourcescountValues());
+        uiModel.addAttribute("presentationformat", Presentationformat.getAllPresentationformat());
+        uiModel.addAttribute("referencingformat", Referencingformat.getAllReferencingformat());
         return "tdorders/create";
     }
 
