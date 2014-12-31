@@ -165,14 +165,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
-    public Converter<TdUserinfo, String> ApplicationConversionServiceFactoryBean.getTdUserinfoToStringConverter() {
-        return new org.springframework.core.convert.converter.Converter<com.paperuni.demo.model.TdUserinfo, java.lang.String>() {
-            public String convert(TdUserinfo tdUserinfo) {
-                return new StringBuilder().append(tdUserinfo.getEmail()).append(' ').append(tdUserinfo.getLoginPassword()).append(' ').append(tdUserinfo.getGroupName()).append(' ').append(tdUserinfo.getCreateBy()).toString();
-            }
-        };
-    }
-    
+        
     public Converter<Integer, TdUserinfo> ApplicationConversionServiceFactoryBean.getIdToTdUserinfoConverter() {
         return new org.springframework.core.convert.converter.Converter<java.lang.Integer, com.paperuni.demo.model.TdUserinfo>() {
             public com.paperuni.demo.model.TdUserinfo convert(java.lang.Integer id) {

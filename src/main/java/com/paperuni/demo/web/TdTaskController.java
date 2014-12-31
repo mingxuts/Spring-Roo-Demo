@@ -24,25 +24,29 @@ public class TdTaskController {
 	
 
 	@RequestMapping(params = "form", produces = "text/html")
-    public String createForm(Model uiModel, @RequestParam("form") int orderID) {
-		TdOrder selectedOrder = tdOrderRepository.findOne(orderID);
-		TdUserinfo customer = tdUserinfoRepository.findOne(selectedOrder.getCustomerId());
-		
+    public String createForm(Model uiModel, @RequestParam(value= "form", required = false) Integer orderID) {
 		TdTask task = new TdTask();
-		task.setOrderId(selectedOrder.getId());
-		task.setCustomerId(customer);
-		task.setCourseLevel(selectedOrder.getCourseLevel());
-		task.setStartDate(selectedOrder.getStartDate());
-		task.setDeadLine(selectedOrder.getDeadLine());
-		task.setWordCount(selectedOrder.getWordCount());
-		task.setSubjectId(selectedOrder.getSubjectId().getId());
-		task.setNote(selectedOrder.getNote());
-		task.setCoupon(selectedOrder.getCoupon());
-		task.setFile(selectedOrder.getFile());
-		task.setFormat(selectedOrder.getFormat());
-		task.setReferencing(selectedOrder.getReferencing());
-		task.setSourcesCount(selectedOrder.getSourcesCount());
-		task.setFileContentType(selectedOrder.getFileContentType());
+		if (orderID != null && orderID != 0){
+			TdOrder selectedOrder = tdOrderRepository.findOne(orderID);
+			TdUserinfo customer = tdUserinfoRepository.findOne(selectedOrder.getCustomerId());			
+			
+			task.setOrderId(selectedOrder.getId());
+			task.setCustomerId(customer);
+			task.setCourseLevel(selectedOrder.getCourseLevel());
+			task.setStartDate(selectedOrder.getStartDate());
+			task.setDeadLine(selectedOrder.getDeadLine());
+			task.setWordCount(selectedOrder.getWordCount());
+			task.setSubjectId(selectedOrder.getSubjectId().getId());
+			task.setNote(selectedOrder.getNote());
+			task.setCoupon(selectedOrder.getCoupon());
+			task.setFile(selectedOrder.getFile());
+			task.setFormat(selectedOrder.getFormat());
+			task.setReferencing(selectedOrder.getReferencing());
+			task.setSourcesCount(selectedOrder.getSourcesCount());
+			task.setFileContentType(selectedOrder.getFileContentType());
+			task.setIncludeFigure(selectedOrder.getIncludeFigure());			
+		}
+
         populateEditForm(uiModel, task);
         return "tdtasks/create";
     }

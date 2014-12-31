@@ -3,22 +3,23 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_com_paperuni_demo_model_TdOrder" modelAttribute="tdOrder" multipart="true" path="/tdorders" render="${empty dependencies}" z="user-managed">
-        <field:input field="taskId" id="c_com_paperuni_demo_model_TdOrder_taskId" z="user-managed" render="false"/>
+        <field:input field="taskId" id="c_com_paperuni_demo_model_TdOrder_taskId" render="false" z="user-managed"/>
         <field:select field="subjectId" id="c_com_paperuni_demo_model_TdOrder_subjectId" itemValue="id" items="${tdsubjects}" path="/tdsubjects" z="kHvtI8QmkWHUQFMC5qZArGHmRL8="/>
         <field:input disabled="true" field="orderStatus" id="c_com_paperuni_demo_model_TdOrder_orderStatus" z="user-managed"/>
         <field:datetime dateTimePattern="${tdOrder_startdate_date_format}" field="startDate" id="c_com_paperuni_demo_model_TdOrder_startDate" required="true" z="rxxfioRK/8INXiEipF05xgZx6V8="/>
         <field:datetime dateTimePattern="${tdOrder_deadline_date_format}" field="deadLine" id="c_com_paperuni_demo_model_TdOrder_deadLine" required="true" z="DtYcw26Qxw3GIKLu7eZw5/fxyxc="/>
-        <field:select field="wordCount" id="c_com_paperuni_demo_model_TdOrder_wordCount" itemValue="id" items="${wordcountvalues}" itemLabel="value" path="/wordcount" required="true" z="user-managed"/>
+        <field:select field="wordCount" id="c_com_paperuni_demo_model_TdOrder_wordCount" itemLabel="value" itemValue="id" items="${wordcountvalues}" path="/wordcount" required="true" z="user-managed"/>
         <field:input field="note" id="c_com_paperuni_demo_model_TdOrder_note" z="4VMLu8IdOioQ1Aou2G1uNR/MfJs="/>
         <field:input field="customerId" id="c_com_paperuni_demo_model_TdOrder_customerId" validationMessageCode="field_invalid_integer" z="/enlMcT+yaNvVJ+kjX3goZqM2qk="/>
-        <field:select field="courseLevel" id="c_com_paperuni_demo_model_TdOrder_courseLevel" z="user-managed" itemValue="level" items="${courselevels}" path="/courselevels" itemLabel="level"/>
+        <field:select field="courseLevel" id="c_com_paperuni_demo_model_TdOrder_courseLevel" itemLabel="level" itemValue="level" items="${courselevels}" path="/courselevels" z="user-managed"/>
         <field:input field="coupon" id="c_com_paperuni_demo_model_TdOrder_coupon" z="TRZy0r8ncUB5/zGGJHXAGUK96cg="/>
         <field:datetime dateTimePattern="${tdOrder_createdate_date_format}" field="createDate" id="c_com_paperuni_demo_model_TdOrder_createDate" render="false" z="user-managed"/>
         <field:input field="file" id="c_com_paperuni_demo_model_TdOrder_file" type="file" z="user-managed"/>
-        <field:select field="format" id="c_com_paperuni_demo_model_TdOrder_format" itemValue="format" items="${presentationformat}" itemLabel="format" path="/presentationformat" z="user-managed"/>
-        <field:select field="referencing" id="c_com_paperuni_demo_model_TdOrder_referencing" itemValue="format" items="${referencingformat}" itemLabel="format" path="/referencingformat" z="user-managed"/>
-        <field:select field="sourcesCount" id="c_com_paperuni_demo_model_TdOrder_sourcesCount" itemValue="id" items="${sourcescount}" itemLabel="value" path="/sourcescount" z="user-managed"/>
+        <field:select field="format" id="c_com_paperuni_demo_model_TdOrder_format" itemLabel="format" itemValue="format" items="${presentationformat}" path="/presentationformat" z="user-managed"/>
+        <field:select field="referencing" id="c_com_paperuni_demo_model_TdOrder_referencing" itemLabel="format" itemValue="format" items="${referencingformat}" path="/referencingformat" z="user-managed"/>
+        <field:select field="sourcesCount" id="c_com_paperuni_demo_model_TdOrder_sourcesCount" itemLabel="value" itemValue="id" items="${sourcescount}" path="/sourcescount" z="user-managed"/>
         <field:input field="fileContentType" id="c_com_paperuni_demo_model_TdOrder_fileContentType" render="false" z="user-managed"/>
+        <field:select field="includeFigure" id="c_com_paperuni_demo_model_TdOrder_includeFigure" itemLabel="include" itemValue="include" items="${includegraph}" path="/includegraph" z="user-managed"/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_com_paperuni_demo_model_TdOrder" render="${not empty dependencies}" z="dDm68QO4zKUWbQY32CCvAus4qWk="/>
 </div>

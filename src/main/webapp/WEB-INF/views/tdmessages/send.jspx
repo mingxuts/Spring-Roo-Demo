@@ -8,7 +8,7 @@
     		<option value="${item.id}">Order Number:${item.orderId}</option>
     	</c:forEach>
     </SELECT>
-    <form:create compositePkField="id" id="fc_com_paperuni_demo_model_TdMessage" modelAttribute="tdMessage" path="./sendmsg" render="${empty dependencies}" z="user-managed" label="message for this order">
+    <form:create compositePkField="id" id="fc_com_paperuni_demo_model_TdMessage" modelAttribute="tdMessage" multipart="true" path="./sendmsg" render="${empty dependencies}" z="user-managed" label="message for this order">
         <field:input disableFormBinding="true" field="id.id" id="c_com_paperuni_demo_model_TdMessage_id_id" required="true" validationMessageCode="field_invalid_integer" z="VAncjp0gDaZaxsOW4eTaw0+BQL0=" render="false"/>
         <field:input disableFormBinding="true" field="id.taskId" id="c_com_paperuni_demo_model_TdMessage_id_taskId" required="false" validationMessageCode="field_invalid_integer" z="user-managed" render="false"/>
         <field:input field="source" id="c_com_paperuni_demo_model_TdMessage_source" z="5BZfN/VlaKoE++nkZvOKfoviZAU=" render="false"/>
@@ -17,6 +17,8 @@
         <field:input field="link" id="c_com_paperuni_demo_model_TdMessage_link" z="2ixApcBc9vW4e5lvZPu9W3O+v7s="/>
         <field:checkbox field="hasReview" id="c_com_paperuni_demo_model_TdMessage_hasReview" z="8lcEecl4wXjCeVOL/6d/6T8GSe0=" render="false"/>
         <field:checkbox field="hasRead" id="c_com_paperuni_demo_model_TdMessage_hasRead" z="11+yeH2foqik+Ic8GplSPp+3Dds=" render="false"/>
+        <field:input field="file" id="c_com_paperuni_demo_model_TdMessage_file" type="file" z="user-managed"/>
+        <field:input field="fileContentType" id="c_com_paperuni_demo_model_TdMessage_fileContentType" render="false" z="user-managed"/>        
         <input type="hidden" name="id.taskId" value="-1" />        
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_com_paperuni_demo_model_TdMessage" render="${not empty dependencies}" z="/csqUzUHuV1lmowhJNQ+ZTeN924="/>

@@ -50,7 +50,7 @@ privileged aspect TdOrder_Roo_DbManaged {
     @Column(name = "CustomerId")
     private Integer TdOrder.customerId;
     
-    @Column(name = "CourseLevel", length = 10)
+    @Column(name = "CourseLevel", length = 35)
     private String TdOrder.courseLevel;
     
     @Column(name = "Coupon", length = 35)
@@ -75,6 +75,9 @@ privileged aspect TdOrder_Roo_DbManaged {
     
     @Column(name = "FileContentType", length = 50)
     private String TdOrder.fileContentType;
+    
+    @Column(name = "IncludeFigure", length = 30)
+    private String TdOrder.includeFigure;
     
     public TdSubject TdOrder.getSubjectId() {
         return subjectId;
@@ -202,6 +205,14 @@ privileged aspect TdOrder_Roo_DbManaged {
     
     public void TdOrder.setFileContentType(String fileContentType) {
         this.fileContentType = fileContentType;
+    }
+    
+    public String TdOrder.getIncludeFigure() {
+        return includeFigure;
+    }
+    
+    public void TdOrder.setIncludeFigure(String includeFigure) {
+        this.includeFigure = includeFigure;
     }
     
 }

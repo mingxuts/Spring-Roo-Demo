@@ -10,24 +10,26 @@
   
   
   <c:forEach items="${data}" var="item">
-  	<fmt:formatDate value="${item.createDate.time}" type="date" dateStyle="short" var="formattedDate"/>
+  	<fmt:formatDate value="${item.message.createDate.time}" type="BOTH" dateStyle="short" timeStyle="short" var="formattedDate"/>
+  	
+  	<c:url var="messagefile" value="/tdmessages/${item.key}/file" />
   	
   	<section id="msg${rowCounter}">
  		<div class="panel panel-default" id="msgpanel${rowCounter}">
 			<div class="panel-heading panel-display">
 				<dl class="dl-horizontal">
 					<dt>ID</dt>
-					<dd>${item.id.id}</dd>
+					<dd>${item.message.id.id}</dd>
 					<dt>Task</dt>
-					<dd>${item.id.taskId}</dd>
+					<dd>${item.message.id.taskId}</dd>
 					<dt>Date</dt>
 					<dd>${formattedDate}</dd>
-					<dt>Link</dt>
-					<dd><a href="http://www.paperuni.com">paperuni.com</a></dd>						
+					<dt>Attachment</dt>
+					<dd><a href="${messagefile}">Open attachment</a></dd>						
 				</dl>
 			</div>
 			<div class="panel-body">
-				<p>${item.body}</p>
+				<p>${item.message.body}</p>
 			</div>  		
   		</div>
   	</section>

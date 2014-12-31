@@ -10,7 +10,7 @@
 	</c:url>
 	
 	<div class="page-header">
-		<h2>Dashboard</h2>
+		<h3>Dashboard</h3>
 	</div>
 	<div>
 		<p><a href="${user_url}" >My Profile</a></p>

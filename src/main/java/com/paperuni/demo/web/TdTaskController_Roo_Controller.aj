@@ -38,8 +38,6 @@ privileged aspect TdTaskController_Roo_Controller {
     @Autowired
     TdUserinfoRepository TdTaskController.tdUserinfoRepository;
     
-    
-    
     @RequestMapping(value = "/{id}", produces = "text/html")
     public String TdTaskController.show(@PathVariable("id") Integer id, Model uiModel) {
         addDateTimeFormatPatterns(uiModel);

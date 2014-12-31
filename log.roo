@@ -44,3 +44,11 @@ help database reverse engineer
 database reverse engineer --package ~.model --schema paperdemo
 quit
 // Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2014-12-14 11:14:21
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-12-30 13:11:11
+database reverse engineer --schema paperdemo --testAutomatically --repository --includeTables "td*"
+exit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2014-12-30 13:21:02
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-12-30 16:39:32
+database reverse engineer --schema paperdemo --testAutomatically --repository --package ~.model --includeTables "td*"
+quit
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2014-12-30 16:40:30

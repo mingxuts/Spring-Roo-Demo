@@ -111,6 +111,9 @@ privileged aspect TdTask_Roo_DbManaged {
     @Column(name = "FileContentType", length = 50)
     private String TdTask.fileContentType;
     
+    @Column(name = "IncludeFigure", length = 30)
+    private String TdTask.includeFigure;
+    
     public Set<TdMessage> TdTask.getTdMessages() {
         return tdMessages;
     }
@@ -325,6 +328,14 @@ privileged aspect TdTask_Roo_DbManaged {
     
     public void TdTask.setFileContentType(String fileContentType) {
         this.fileContentType = fileContentType;
+    }
+    
+    public String TdTask.getIncludeFigure() {
+        return includeFigure;
+    }
+    
+    public void TdTask.setIncludeFigure(String includeFigure) {
+        this.includeFigure = includeFigure;
     }
     
 }

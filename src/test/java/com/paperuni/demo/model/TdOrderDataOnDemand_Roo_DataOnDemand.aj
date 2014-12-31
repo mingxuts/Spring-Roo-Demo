@@ -48,6 +48,7 @@ privileged aspect TdOrderDataOnDemand_Roo_DataOnDemand {
         setFile(obj, index);
         setFileContentType(obj, index);
         setFormat(obj, index);
+        setIncludeFigure(obj, index);
         setNote(obj, index);
         setOrderStatus(obj, index);
         setReferencing(obj, index);
@@ -67,9 +68,9 @@ privileged aspect TdOrderDataOnDemand_Roo_DataOnDemand {
     }
     
     public void TdOrderDataOnDemand.setCourseLevel(TdOrder obj, int index) {
-        String courseLevel = "courseLe_" + index;
-        if (courseLevel.length() > 10) {
-            courseLevel = courseLevel.substring(0, 10);
+        String courseLevel = "courseLevel_" + index;
+        if (courseLevel.length() > 35) {
+            courseLevel = courseLevel.substring(0, 35);
         }
         obj.setCourseLevel(courseLevel);
     }
@@ -108,6 +109,14 @@ privileged aspect TdOrderDataOnDemand_Roo_DataOnDemand {
             format = format.substring(0, 30);
         }
         obj.setFormat(format);
+    }
+    
+    public void TdOrderDataOnDemand.setIncludeFigure(TdOrder obj, int index) {
+        String includeFigure = "includeFigure_" + index;
+        if (includeFigure.length() > 30) {
+            includeFigure = includeFigure.substring(0, 30);
+        }
+        obj.setIncludeFigure(includeFigure);
     }
     
     public void TdOrderDataOnDemand.setNote(TdOrder obj, int index) {

@@ -1,5 +1,7 @@
 package com.paperuni.demo.web;
 
+import com.paperuni.demo.model.TdUserinfo;
+import org.springframework.core.convert.converter.Converter;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.format.support.FormattingConversionServiceFactoryBean;
 import org.springframework.roo.addon.web.mvc.controller.converter.RooConversionService;
@@ -15,4 +17,12 @@ public class ApplicationConversionServiceFactoryBean extends FormattingConversio
 		super.installFormatters(registry);
 		// Register application converters and formatters
 	}
+
+	public Converter<TdUserinfo, String> getTdUserinfoToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<com.paperuni.demo.model.TdUserinfo, java.lang.String>() {
+            public String convert(TdUserinfo tdUserinfo) {
+                return new StringBuilder().append(tdUserinfo.getPreferName()).append("<").append(tdUserinfo.getEmail()).append(">").toString();
+            }
+        };
+    }
 }

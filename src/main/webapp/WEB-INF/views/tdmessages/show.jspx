@@ -10,5 +10,7 @@
         <field:display field="link" id="s_com_paperuni_demo_model_TdMessage_link" object="${tdmessage}" z="ucHE4+YuoUT5ZLN0A0QROH4PXcE="/>
         <field:display field="hasReview" id="s_com_paperuni_demo_model_TdMessage_hasReview" object="${tdmessage}" z="86HfVzUt7KET41KaYNBtV5nRe54="/>
         <field:display field="hasRead" id="s_com_paperuni_demo_model_TdMessage_hasRead" object="${tdmessage}" z="bgLYySSGuTARNi/fMjxeFvBm/yk="/>
+        <field:display field="file" id="s_com_paperuni_demo_model_TdMessage_file" object="${tdmessage}" z="SIad5krLvLohQ7tcklr0m7c8wP8="/>
+        <field:display field="fileContentType" id="s_com_paperuni_demo_model_TdMessage_fileContentType" object="${tdmessage}" z="FvpG4se4ne93Nxn9Z0cBEmBLQlc="/>
     </page:show>
 </div>

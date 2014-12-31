@@ -17,8 +17,7 @@ function onTaskChange(){
 	});
 }
 
-function setControlValue(){
-	$('textarea[name="body"]').attr("rows", "10");
+function setControlValue(){	
 	var taskid = $("select.form-control").val();
 	$('input[name="id.taskId"]').val(taskid);
 }

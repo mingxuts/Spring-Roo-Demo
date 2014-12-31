@@ -30,5 +30,6 @@
         <field:input field="feedBackDescription" id="c_com_paperuni_demo_model_TdTask_feedBackDescription" z="SXoTAa52/l2xeRQh9iyPAhEGWh4="/>
         <field:checkbox field="allowAllSubject" id="c_com_paperuni_demo_model_TdTask_allowAllSubject" z="Nt0sKgbRWUMiZM9HYY6+6fI6ZIc="/>
         <field:input field="fileContentType" id="c_com_paperuni_demo_model_TdTask_fileContentType" z="EsN7QdYQTApkHd41SbBCukYSDhY="/>
+        <field:input field="includeFigure" id="c_com_paperuni_demo_model_TdTask_includeFigure" z="1ZFZF6DHqbZ7NL7hp6dQlfFfxiI="/>
     </form:update>
 </div>

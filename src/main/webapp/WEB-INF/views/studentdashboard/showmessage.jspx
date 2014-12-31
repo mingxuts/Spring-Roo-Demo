@@ -5,7 +5,7 @@
 	
 	
      <div class="page-header">
-         <h3>Testing</h3>         
+         <h3>Chat Room</h3>         
      </div>
 	<div>
 		<util:messagebox id="mgb_com_paperuni_demo_model_TMessage" data="${tdmessages}" >

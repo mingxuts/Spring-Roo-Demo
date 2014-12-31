@@ -2,12 +2,14 @@
 <div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/jquery/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
-    <form:update id="fu_com_paperuni_demo_model_TdMessage" modelAttribute="tdMessage" path="/tdmessages" versionField="none" z="YivJpCzsCbtAo68ssUuo1uvSOo8=">
+    <form:update id="fu_com_paperuni_demo_model_TdMessage" modelAttribute="tdMessage" multipart="true" path="/tdmessages" versionField="none" z="YivJpCzsCbtAo68ssUuo1uvSOo8=">
         <field:input field="source" id="c_com_paperuni_demo_model_TdMessage_source" z="5BZfN/VlaKoE++nkZvOKfoviZAU="/>
         <field:datetime dateTimePattern="${tdMessage_createdate_date_format}" field="createDate" id="c_com_paperuni_demo_model_TdMessage_createDate" z="xHt5pUX14/TkHL0hJr40DNEWrfg="/>
         <field:input field="body" id="c_com_paperuni_demo_model_TdMessage_body" required="true" z="x/BXzQMwAwhST6WgxCMN0zsYais="/>
         <field:input field="link" id="c_com_paperuni_demo_model_TdMessage_link" z="2ixApcBc9vW4e5lvZPu9W3O+v7s="/>
         <field:checkbox field="hasReview" id="c_com_paperuni_demo_model_TdMessage_hasReview" z="8lcEecl4wXjCeVOL/6d/6T8GSe0="/>
         <field:checkbox field="hasRead" id="c_com_paperuni_demo_model_TdMessage_hasRead" z="11+yeH2foqik+Ic8GplSPp+3Dds="/>
+        <field:input field="file" id="c_com_paperuni_demo_model_TdMessage_file" type="file" z="user-managed"/>
+        <field:input field="fileContentType" id="c_com_paperuni_demo_model_TdMessage_fileContentType" render="false" z="user-managed"/>
     </form:update>
 </div>

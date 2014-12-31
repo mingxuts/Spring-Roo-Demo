@@ -41,6 +41,12 @@ privileged aspect TdMessage_Roo_DbManaged {
     @Column(name = "HasRead")
     private Boolean TdMessage.hasRead;
     
+    @Column(name = "File")
+    private byte[] TdMessage.file;
+    
+    @Column(name = "FileContentType", length = 50)
+    private String TdMessage.fileContentType;
+    
     public TdTask TdMessage.getTaskId() {
         return taskId;
     }
@@ -95,6 +101,22 @@ privileged aspect TdMessage_Roo_DbManaged {
     
     public void TdMessage.setHasRead(Boolean hasRead) {
         this.hasRead = hasRead;
+    }
+    
+    public byte[] TdMessage.getFile() {
+        return file;
+    }
+    
+    public void TdMessage.setFile(byte[] file) {
+        this.file = file;
+    }
+    
+    public String TdMessage.getFileContentType() {
+        return fileContentType;
+    }
+    
+    public void TdMessage.setFileContentType(String fileContentType) {
+        this.fileContentType = fileContentType;
     }
     
 }

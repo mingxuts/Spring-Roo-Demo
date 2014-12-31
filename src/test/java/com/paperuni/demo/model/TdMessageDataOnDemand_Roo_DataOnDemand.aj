@@ -40,6 +40,8 @@ privileged aspect TdMessageDataOnDemand_Roo_DataOnDemand {
         setEmbeddedIdClass(obj, index);
         setBody(obj, index);
         setCreateDate(obj, index);
+        setFile(obj, index);
+        setFileContentType(obj, index);
         setHasRead(obj, index);
         setHasReview(obj, index);
         setLink(obj, index);
@@ -64,6 +66,19 @@ privileged aspect TdMessageDataOnDemand_Roo_DataOnDemand {
     public void TdMessageDataOnDemand.setCreateDate(TdMessage obj, int index) {
         Calendar createDate = Calendar.getInstance();
         obj.setCreateDate(createDate);
+    }
+    
+    public void TdMessageDataOnDemand.setFile(TdMessage obj, int index) {
+        byte[] file = String.valueOf(index).getBytes();
+        obj.setFile(file);
+    }
+    
+    public void TdMessageDataOnDemand.setFileContentType(TdMessage obj, int index) {
+        String fileContentType = "fileContentType_" + index;
+        if (fileContentType.length() > 50) {
+            fileContentType = fileContentType.substring(0, 50);
+        }
+        obj.setFileContentType(fileContentType);
     }
     
     public void TdMessageDataOnDemand.setHasRead(TdMessage obj, int index) {

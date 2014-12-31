@@ -13,6 +13,7 @@ import javax.validation.Valid;
 import com.paperuni.demo.CustomUser;
 import com.paperuni.demo.model.TdOrder;
 import com.paperuni.demo.web.selectoption.Courselevel;
+import com.paperuni.demo.web.selectoption.Includegraph;
 import com.paperuni.demo.web.selectoption.Presentationformat;
 import com.paperuni.demo.web.selectoption.Referencingformat;
 import com.paperuni.demo.web.selectoption.Sourcescount;
@@ -46,6 +47,7 @@ public class TdOrderController {
         uiModel.addAttribute("sourcescount", Sourcescount.getAllSourcescountValues());
         uiModel.addAttribute("presentationformat", Presentationformat.getAllPresentationformat());
         uiModel.addAttribute("referencingformat", Referencingformat.getAllReferencingformat());
+        uiModel.addAttribute("includegraph", Includegraph.getAllIncludegraphs());
         return "tdorders/create";
     }
 

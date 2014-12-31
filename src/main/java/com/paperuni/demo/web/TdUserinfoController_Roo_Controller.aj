@@ -101,12 +101,7 @@ privileged aspect TdUserinfoController_Roo_Controller {
         uiModel.addAttribute("tdUserinfo_createdate_date_format", DateTimeFormat.patternForStyle("MM", LocaleContextHolder.getLocale()));
     }
     
-    void TdUserinfoController.populateEditForm(Model uiModel, TdUserinfo tdUserinfo) {
-        uiModel.addAttribute("tdUserinfo", tdUserinfo);
-        addDateTimeFormatPatterns(uiModel);
-        uiModel.addAttribute("tdtasks", tdTaskRepository.findAll());
-    }
-    
+        
     String TdUserinfoController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {
         String enc = httpServletRequest.getCharacterEncoding();
         if (enc == null) {

@@ -50,6 +50,7 @@ privileged aspect TdTaskDataOnDemand_Roo_DataOnDemand {
         setFileContentType(obj, index);
         setFormat(obj, index);
         setFullPrice(obj, index);
+        setIncludeFigure(obj, index);
         setNote(obj, index);
         setOrderId(obj, index);
         setReduced(obj, index);
@@ -157,6 +158,14 @@ privileged aspect TdTaskDataOnDemand_Roo_DataOnDemand {
             fullPrice = new BigDecimal("999999.99");
         }
         obj.setFullPrice(fullPrice);
+    }
+    
+    public void TdTaskDataOnDemand.setIncludeFigure(TdTask obj, int index) {
+        String includeFigure = "includeFigure_" + index;
+        if (includeFigure.length() > 30) {
+            includeFigure = includeFigure.substring(0, 30);
+        }
+        obj.setIncludeFigure(includeFigure);
     }
     
     public void TdTaskDataOnDemand.setNote(TdTask obj, int index) {
