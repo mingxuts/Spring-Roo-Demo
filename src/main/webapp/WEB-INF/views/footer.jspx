@@ -20,14 +20,22 @@
 	      </a>
 	        </span>
 	  </c:if>
+	  
+	  <c:if test="${pageContext['request'].userPrincipal == null}">
+	  	<c:out value=" | "/>
+	  	<span>
+	  		<spring:url value="/signup/index" var="signup" />
+	  		<a href="${signup}">
+	  			Signup
+	  		</a>	  		
+	  	</span>
+	  </c:if>
 
 	  <span id="language">
 	    <c:out value=" | "/>
 	    <spring:message code="global_language"/>
 	    <c:out value=": "/>
-	  <util:language label="English" locale="en"/>
-	    <util:language label="Deubuilderh" locale="de"/>
-	    <util:language label="Espanol" locale="es"/>
+	  <util:language label="English" locale="en"/>	  
 	    </span>
  </div>
  <div class="col-xs-12 col-sm-3">

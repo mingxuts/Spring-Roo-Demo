@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:fmt="http://java.sun.com/jsp/jstl/fmt" version="2.0">
+	<jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  	<jsp:output omit-xml-declaration="yes"/>
+  	
+  	<div class="panel panel-default">
+  		<div class="panel-heading">
+  			<h3 class="panel-title">
+  				Show new messages
+  			</h3>
+  		</div>
+  		<div class="panel-body">
+  			<table class="dataTable">
+  				<thead>
+  					<tr>
+  						<td>Time</td>
+  						<td>Body</td>
+  						<td>Sender</td>
+  						<td>Recipient</td>
+  						<td>Attachment</td>
+  						<td></td>
+  					</tr>					  					
+  				</thead>
+  				<tbody>
+  					<c:forEach var="item" items="${messages}" >
+  						<fmt:formatDate value="${item.message.createDate.time}" type="BOTH" dateStyle="short" timeStyle="short" var="formattedDate"/>
+  						<tr>
+  							<td>${formattedDate}</td>
+  							<td>${item.message.body}</td>
+  							<c:choose>
+  								<c:when test="${item.message.source eq 'C' }">
+  									<td>${item.writer.email}</td>
+  									<td>${item.student.email}</td>
+  								</c:when>
+  								<c:when test="${item.message.source eq 'W'}">
+  									<td>${item.student.email}</td>
+  									<td>${item.writer.email}</td>
+  								</c:when>
+  							</c:choose>
+  							<td>
+  								<c:url var="messagefile" value="/tdmessages/${item.key}/file" />
+  								<a href="${messagefile}">Open Attachment</a>
+  							</td>
+  							<td>
+  								<a href="/">Edit</a>
+  							</td>
+  						</tr>
+  					</c:forEach>
+  				</tbody>
+  			</table>
+  		</div>
+  	</div>	
+</div>

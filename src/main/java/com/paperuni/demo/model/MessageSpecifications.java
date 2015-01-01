@@ -42,5 +42,16 @@ public class MessageSpecifications {
 			}
 		};
 	}
+	
+	public static Specification<TdMessage> Hasnotread(){
+		
+		return new Specification<TdMessage>(){
+			
+			@Override
+			public Predicate toPredicate(Root<TdMessage> root, CriteriaQuery<?> query, CriteriaBuilder cb){
+				return cb.isFalse(root.<Boolean>get("hasRead"));
+			}
+		};
+	}
 
 }

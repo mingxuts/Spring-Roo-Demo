@@ -18,6 +18,6 @@
 		<p><a href="/home/profile" >Manage Coupon</a></p>
 		<p><a href="/home/profile" >Orders</a></p>
 		<p><a href="/home/profile" >Create Subadmin</a></p>
-		<p><a href="/home/profile" >Message</a></p>
+		<p><a href="./messages" >Messages</a></p>
 	</div>
 </div>
