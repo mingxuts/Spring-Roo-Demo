@@ -42,7 +42,8 @@
   								<a href="${messagefile}">Open Attachment</a>
   							</td>
   							<td>
-  								<a href="/">Edit</a>
+  								<c:url var="editmessage_url" value="/admindashboard/messages/${item.key}/edit" />
+  								<a href="${editmessage_url}">Edit</a>
   							</td>
   						</tr>
   					</c:forEach>

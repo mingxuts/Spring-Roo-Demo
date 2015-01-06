@@ -31,6 +31,7 @@ import org.springframework.web.multipart.support.ByteArrayMultipartFileEditor;
 
 import com.paperuni.demo.CustomUser;
 import com.paperuni.demo.model.OrderSpecifications;
+import com.paperuni.demo.model.TaskSpecifications;
 import com.paperuni.demo.model.TdMessage;
 import com.paperuni.demo.model.TdMessagePK;
 import com.paperuni.demo.model.TdMessageRepository;
@@ -112,16 +113,18 @@ public class StudentDashboardController {
 	
 	
 	@RequestMapping(value="/sendmsg", method=RequestMethod.GET)
-	public String sendMsgForm(Model uiModel){
-		populateEditForm(uiModel, new TdMessage());
+	public String sendMsgForm(Model uiModel, Principal principal){
+		CustomUser user = (CustomUser)((Authentication) principal).getPrincipal();
+		populateEditForm(uiModel, new TdMessage(), user.loadUserinfo(tdUSerinfoRepository));
 		return "studentdashboard/sendmsg";
 	}
 	
 	@RequestMapping(value="/sendmsg", method=RequestMethod.POST)
 	public String sendMsg(@Valid TdMessage tdMessage, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest,
-			@RequestParam("file") MultipartFile multipartFile) {
+			@RequestParam("file") MultipartFile multipartFile, Principal principal) {
+		CustomUser user = (CustomUser)((Authentication) principal).getPrincipal();
         if (bindingResult.hasErrors()) {
-            populateEditForm(uiModel, tdMessage);
+            populateEditForm(uiModel, tdMessage, user.loadUserinfo(tdUSerinfoRepository));
             return "studentdashboard/sendmsg";
         }
         uiModel.asMap().clear();
@@ -150,10 +153,10 @@ public class StudentDashboardController {
 	}
 	
 	
-	void populateEditForm(Model uiModel, TdMessage tdMessage) {
+	void populateEditForm(Model uiModel, TdMessage tdMessage, TdUserinfo tdUserinfo) {
         uiModel.addAttribute("tdMessage", tdMessage);
         uiModel.addAttribute("tdMessage_createdate_date_format", "MMM d, yyyy");
-        uiModel.addAttribute("tdtasks", tdTaskRepository.findAll());
+        uiModel.addAttribute("tdtasks", tdTaskRepository.findAll(TaskSpecifications.byCustomer(tdUserinfo)));
     }
 	
 	Specification<TdMessage> byTaskId(int taskId){

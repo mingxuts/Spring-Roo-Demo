@@ -11,4 +11,8 @@
     <definition extends="default" name="admindashboard/messages">
     	<put-attribute name="body" value="/WEB-INF/views/admindashboard/messages.jspx" />
     </definition>
+    <definition extends="default" name="admindashboard/editmessage">
+    	<put-attribute name="body" value="/WEB-INF/views/tdmessages/send.jspx" />
+    	<put-attribute name="customscript" value="/WEB-INF/views/admindashboard/editmessagebottomscripts.jspx" />
+    </definition>    
 </tiles-definitions>

@@ -4,13 +4,18 @@ import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.ConversionService;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
+import org.springframework.data.jpa.domain.Specifications.*;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,6 +24,7 @@ import com.paperuni.demo.CustomUser;
 import com.paperuni.demo.model.MessageSpecifications;
 import com.paperuni.demo.model.OrderSpecifications;
 import com.paperuni.demo.model.TdMessage;
+import com.paperuni.demo.model.TdMessagePK;
 import com.paperuni.demo.model.TdMessageRepository;
 import com.paperuni.demo.model.TdOrder;
 import com.paperuni.demo.model.TdOrderRepository;
@@ -62,17 +68,47 @@ public class AdminDashboardController {
 	
 	@RequestMapping(value = "/messages", method=RequestMethod.GET)
 	public String messages(Model uiModel){
-		uiModel.addAttribute("messages", convertMessageList(tdMessageRepository.findAll(messageIsnotRead(), sortByCreateDatedesc())));
+		uiModel.addAttribute("messages", convertMessageList(tdMessageRepository.findAll(messageIsnotReview(), sortByCreateDatedesc())));
 		return "admindashboard/messages";
 	}
 	
-	Specification<TdOrder> isPendingAndUnassign(){
+	@RequestMapping(value = "/messages/{id}/edit", method = RequestMethod.GET)
+	public String editMessageForm(Model uiModel, @PathVariable("id") String id){
+		TdMessage message = tdMessageRepository.findOne(conversionService.convert(id, TdMessagePK.class));
+		uiModel.addAttribute("tdMessage", message);
+		return "admindashboard/editmessage";
+	}
+	
+	@RequestMapping(value="/messages/{id}/edit", method=RequestMethod.POST)
+	public String editMessage(@Valid TdMessage tdMessage, BindingResult bindingResult, Model uiModel, @PathVariable("id") String id){
+		if (bindingResult.hasErrors()){
+			uiModel.addAttribute("tdMessage", tdMessage);
+			return "admindashboard/editmessage";
+		}
+		uiModel.asMap().clear();
+		TdMessage oldmessage = tdMessageRepository.findOne(conversionService.convert(id, TdMessagePK.class));
+		oldmessage.setBody(tdMessage.getBody());
+		oldmessage.setLink(tdMessage.getLink());
+		oldmessage.setHasReview(true);
+		
+		tdMessageRepository.save(oldmessage);
+		return "redirect:/admindashboard/messages";
+	}
+	
+	
+	private Specification<TdMessage> messageIsnotRead(){
+		return MessageSpecifications.Hasnotread();
+	}
+	
+	private Specification<TdMessage> messageIsnotReview(){
+		return MessageSpecifications.HasnotReview();
+	}
+	
+	private Specification<TdOrder> isPendingAndUnassign(){
 		return OrderSpecifications.isPendingAndUnassign();
 	}
 	
-	Specification<TdMessage> messageIsnotRead(){
-		return MessageSpecifications.Hasnotread();
-	}
+	
 	
 	private Sort sortByCreateDatedesc(){
 		return new Sort(Sort.Direction.DESC, "createDate");

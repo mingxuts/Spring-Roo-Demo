@@ -9,4 +9,9 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooDbManaged(automaticallyDelete = true)
 @RooToString(excludeFields = { "taskId" })
 public class TdMessage {
+	
+	public TdMessage(){
+		this.setHasRead(false);
+		this.setHasReview(false);
+	}
 }

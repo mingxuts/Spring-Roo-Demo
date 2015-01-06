@@ -11,8 +11,16 @@
 	</script>
 	<script type="text/javascript" >
 		$(function(){
-			initPage();
+			initPage();			
 		})
 	</script>
+	<c:if test="${empty tdtasks}" >
+		<script type="text/javascript">
+			$("#tdMessage").submit(function (event){
+				alert("You don't have any active orders!");
+				event.preventDefault();
+			});
+		</script>
+	</c:if>
 	
 </div>

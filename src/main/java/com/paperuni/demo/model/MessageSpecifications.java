@@ -6,8 +6,10 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 
 import org.springframework.data.jpa.domain.Specification;
+import org.springframework.data.jpa.domain.Specifications;
 
-public class MessageSpecifications {
+public class MessageSpecifications{
+	
 	
 	public static Specification<TdMessage> byCustomer(final TdUserinfo userinfo){
 		
@@ -53,5 +55,17 @@ public class MessageSpecifications {
 			}
 		};
 	}
+	
+	public static Specification<TdMessage> HasnotReview(){
+		
+		return new Specification<TdMessage>(){
+			
+			@Override
+			public Predicate toPredicate(Root<TdMessage> root, CriteriaQuery<?> query, CriteriaBuilder cb){
+				return cb.isFalse(root.<Boolean>get("hasReview"));
+			}
+		};
+	}
+
 
 }
