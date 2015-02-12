@@ -17,7 +17,7 @@
 		<p><a href="${enquiry_url}" >New Order Inquiry</a></p>
 		<p><a href="/home/profile" >Manage Coupon</a></p>
 		<p><a href="/home/profile" >Orders</a></p>
-		<p><a href="/home/profile" >Create Subadmin</a></p>
+		<p><a href="addsubadmin" >Create Subadmin</a></p>
 		<p><a href="./messages" >Messages</a></p>
 	</div>
 </div>

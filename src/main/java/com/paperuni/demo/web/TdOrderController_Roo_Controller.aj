@@ -71,11 +71,7 @@ privileged aspect TdOrderController_Roo_Controller {
         return "redirect:/tdorders";
     }
     
-    void TdOrderController.addDateTimeFormatPatterns(Model uiModel) {
-        uiModel.addAttribute("tdOrder_startdate_date_format", DateTimeFormat.patternForStyle("MM", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("tdOrder_deadline_date_format", DateTimeFormat.patternForStyle("MM", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("tdOrder_createdate_date_format", DateTimeFormat.patternForStyle("MM", LocaleContextHolder.getLocale()));
-    }
+    
     
     void TdOrderController.populateEditForm(Model uiModel, TdOrder tdOrder) {
         uiModel.addAttribute("tdOrder", tdOrder);

@@ -1,5 +1,6 @@
 package com.paperuni.demo.web;
 
+import com.paperuni.demo.model.TdTask;
 import com.paperuni.demo.model.TdUserinfo;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.format.FormatterRegistry;
@@ -22,6 +23,14 @@ public class ApplicationConversionServiceFactoryBean extends FormattingConversio
         return new org.springframework.core.convert.converter.Converter<com.paperuni.demo.model.TdUserinfo, java.lang.String>() {
             public String convert(TdUserinfo tdUserinfo) {
                 return new StringBuilder().append(tdUserinfo.getPreferName()).append("<").append(tdUserinfo.getEmail()).append(">").toString();
+            }
+        };
+    }
+
+	public Converter<TdTask, String> getTdTaskToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<com.paperuni.demo.model.TdTask, java.lang.String>() {
+            public String convert(TdTask tdTask) {            	
+                return new StringBuilder().append(tdTask.getOrderId()).append(' ').append(tdTask.getStatus()).append(' ').toString();
             }
         };
     }

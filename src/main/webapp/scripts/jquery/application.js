@@ -267,7 +267,11 @@ function jQueryInitializeComponents(context) {
       var pattern = $input.attr("data-dateformat");
 
       if(isNotEmpty(pattern)) {
-        $input.datepicker({ dateFormat: jQueryDateFormat( pattern ) });
+        $input.datepicker({ dateFormat: jQueryDateFormat( pattern ), 
+        	onSelect: function(datetext){
+			datetext = datetext + " 12:00:00 AM";
+			$input.val(datetext);
+		} });
       }
       else {
         $input.datepicker();

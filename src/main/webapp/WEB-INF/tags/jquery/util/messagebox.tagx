@@ -28,9 +28,18 @@
 					<dd><a href="${messagefile}">Open attachment</a></dd>						
 				</dl>
 			</div>
-			<div class="panel-body">
-				<p>${item.message.body}</p>
-			</div>  		
+			<c:choose>
+				<c:when test="${item.message.source =='W'}">
+					<div class="panel-body msgbox-body-send">
+						<p>${item.message.body}</p>
+					</div>
+				</c:when>
+				<c:when test="${item.message.source =='C'}">
+					<div class="panel-body msgbox-body-receive">
+						<p>${item.message.body}</p>
+					</div>					
+				</c:when>
+			</c:choose>  		
   		</div>
   	</section>
   	
