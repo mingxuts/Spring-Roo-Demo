@@ -15,5 +15,17 @@
     <put-attribute name="header" value="/WEB-INF/views/header.jspx" />
     <put-attribute name="footer" value="/WEB-INF/views/footer.jspx" />
   </definition>
+  
+  <definition name="student-template" template="/WEB-INF/layouts/default.jspx">
+  	<put-attribute name="header" value="/WEB-INF/views/header.jspx" />
+  	<put-attribute name="menu"  value="/WEB-INF/views/student-menu.jspx" />
+  	<put-attribute name="footer" value="/WEB-INF/views/footer.jspx"/>
+  </definition>
+  
+  <definition name="subadmin-template" template="/WEB-INF/layouts/default.jspx">
+  	<put-attribute name="header" value="/WEB-INF/views/header.jspx" />
+  	<put-attribute name="menu"  value="/WEB-INF/views/subadmin-menu.jspx" />
+  	<put-attribute name="footer" value="/WEB-INF/views/footer.jspx"/>
+  </definition>  
 
 </tiles-definitions>
