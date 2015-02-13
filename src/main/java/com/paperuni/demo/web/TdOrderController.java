@@ -5,11 +5,9 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-
 import com.paperuni.demo.CustomUser;
 import com.paperuni.demo.model.TdOrder;
 import com.paperuni.demo.web.selectoption.Courselevel;
@@ -18,8 +16,8 @@ import com.paperuni.demo.web.selectoption.Presentationformat;
 import com.paperuni.demo.web.selectoption.Referencingformat;
 import com.paperuni.demo.web.selectoption.Sourcescount;
 import com.paperuni.demo.web.selectoption.Wordcount;
-
 import org.springframework.security.core.Authentication;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.roo.addon.web.mvc.controller.scaffold.RooWebScaffold;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,6 +30,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.support.ByteArrayMultipartFileEditor;
 import org.gvnix.addon.web.mvc.jquery.GvNIXWebJQuery;
+import org.joda.time.format.DateTimeFormat;
 
 @RequestMapping("/tdorders")
 @Controller
@@ -87,5 +86,11 @@ public class TdOrderController {
         tdOrder.setFileContentType(multipartFile.getContentType());
         tdOrderRepository.save(tdOrder);
         return "redirect:/tdorders/" + encodeUrlPathSegment(tdOrder.getId().toString(), httpServletRequest);
+    }
+
+	void addDateTimeFormatPatterns(Model uiModel) {
+        uiModel.addAttribute("tdOrder_startdate_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
+        uiModel.addAttribute("tdOrder_deadline_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
+        uiModel.addAttribute("tdOrder_createdate_date_format", DateTimeFormat.patternForStyle("MM", LocaleContextHolder.getLocale()));
     }
 }

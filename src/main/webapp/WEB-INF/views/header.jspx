@@ -14,7 +14,7 @@
 	</div>
 
 	<div class="pull-right">
-		<spring:url var="home" value="/" />
+		<spring:url var="home" value="/home/index" />
 		<spring:message code="button_home" var="home_label" htmlEscape="false" />
 		<spring:message code="application_name" var="project_name"
 			htmlEscape="false" />

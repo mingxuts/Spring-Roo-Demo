@@ -30,6 +30,7 @@ import com.paperuni.demo.model.TdOrder;
 import com.paperuni.demo.model.TdOrderRepository;
 import com.paperuni.demo.model.TdUserinfo;
 import com.paperuni.demo.web.selectoption.AdminMessageconverter;
+import com.paperuni.demo.web.selectoption.Groupname;
 
 @RequestMapping("/admindashboard/**")
 @Controller
@@ -42,11 +43,28 @@ public class AdminDashboardController {
 	private TdMessageRepository tdMessageRepository;
 	
 	@Autowired
-	private ConversionService conversionService;	
+	private ConversionService conversionService;
+	
+	@Autowired
+	Groupname groupName;
 
 	@RequestMapping(value="/index", method=RequestMethod.GET)
 	public String index(){
 		return "admindashboard/index";
+	}
+	
+	@RequestMapping(value="/addsubadmin", method=RequestMethod.GET)
+	public String addSubadmin(Principal principal, Model uiModel){
+		TdUserinfo subadmin = new TdUserinfo();
+		subadmin.setGroupName("ROLE_SUBADMIN");
+		subadmin.setHasVerified(true);
+		subadmin.setPasswordNonExpired(true);
+		CustomUser loginUser = (CustomUser) ((Authentication) principal).getPrincipal();
+		int id = loginUser.getUserID();		
+		subadmin.setCreateBy(id);
+		uiModel.addAttribute("tdUserinfo", subadmin);
+		uiModel.addAttribute("groupnames", groupName.getAllGroupnames());
+		return "admindashboard/addsubadmin";
 	}
 	
 	@RequestMapping(value="/enquiry", method=RequestMethod.GET)

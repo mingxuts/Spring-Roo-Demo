@@ -18,6 +18,8 @@
 			
 			var htmlbutton = "<td><button>Create Task</button></td>";
 			
+			$(".dataTable thead tr").prepend("<th></th>");
+			
 			$(".dataTable tbody tr").not(':last').prepend($(htmlbutton));
 			
 			$(".dataTable tbody button").addClass("btn btn-info btn-sm");		

@@ -142,3 +142,12 @@ body {
 	text-transform:uppercase;
 	letter-spacing:1px;
 	content:"Message"}
+	
+.msgbox-body-receive{
+	color: #000000;
+	background-color: #7fcce5;
+}
+
+.msgbox-body-send{
+	
+}	

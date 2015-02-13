@@ -141,13 +141,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
-    public Converter<TdTask, String> ApplicationConversionServiceFactoryBean.getTdTaskToStringConverter() {
-        return new org.springframework.core.convert.converter.Converter<com.paperuni.demo.model.TdTask, java.lang.String>() {
-            public String convert(TdTask tdTask) {
-                return new StringBuilder().append(tdTask.getOrderId()).append(' ').append(tdTask.getStatus()).append(' ').append(tdTask.getStartDate()).append(' ').append(tdTask.getDeadLine()).toString();
-            }
-        };
-    }
+    
     
     public Converter<Integer, TdTask> ApplicationConversionServiceFactoryBean.getIdToTdTaskConverter() {
         return new org.springframework.core.convert.converter.Converter<java.lang.Integer, com.paperuni.demo.model.TdTask>() {
