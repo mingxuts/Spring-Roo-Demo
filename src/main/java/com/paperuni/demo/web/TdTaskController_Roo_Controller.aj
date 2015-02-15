@@ -88,11 +88,7 @@ privileged aspect TdTaskController_Roo_Controller {
         return "redirect:/tdtasks";
     }
     
-    void TdTaskController.addDateTimeFormatPatterns(Model uiModel) {
-        uiModel.addAttribute("tdTask_startdate_date_format", DateTimeFormat.patternForStyle("MM", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("tdTask_deadline_date_format", DateTimeFormat.patternForStyle("MM", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("tdTask_createdate_date_format", DateTimeFormat.patternForStyle("MM", LocaleContextHolder.getLocale()));
-    }
+    
     
     void TdTaskController.populateEditForm(Model uiModel, TdTask tdTask) {
         uiModel.addAttribute("tdTask", tdTask);

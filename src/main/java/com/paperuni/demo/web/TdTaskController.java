@@ -7,6 +7,7 @@ import com.paperuni.demo.model.TdUserinfo;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.roo.addon.web.mvc.controller.scaffold.RooWebScaffold;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.gvnix.addon.web.mvc.jquery.GvNIXWebJQuery;
+import org.joda.time.format.DateTimeFormat;
 
 @RequestMapping("/tdtasks")
 @Controller
@@ -63,5 +65,11 @@ public class TdTaskController {
         tdOrder.setTaskId(tdTask);
         tdOrderRepository.save(tdOrder);
         return "redirect:/tdtasks/" + encodeUrlPathSegment(tdTask.getId().toString(), httpServletRequest);
+    }
+
+	void addDateTimeFormatPatterns(Model uiModel) {
+        uiModel.addAttribute("tdTask_startdate_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
+        uiModel.addAttribute("tdTask_deadline_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
+        uiModel.addAttribute("tdTask_createdate_date_format", DateTimeFormat.patternForStyle("MM", LocaleContextHolder.getLocale()));
     }
 }

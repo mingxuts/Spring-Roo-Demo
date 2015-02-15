@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:util="urn:jsptagdir:/WEB-INF/tags/jquery/util" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+	
+	
+     <div class="page-header">
+         <h3>Payment Methods</h3>           
+     </div>
+	<div>
+                <h2 class="formcaption">Select your method</h2>
+                <div class="row" style="margin-bottom: 40px;" id="paymethod">
+                    <label class="radiorow roundcorner" id="alipay" style="height: 90px; width: 100px;">
+                        <input type="radio" name="method" value="A" data-paymentlimit="20000"/>
+                    </label>
+                    <!--label class="radiorow roundcorner" id="union">
+                        <input type="radio" name="method" value="U" data-paymentlimit="20000" />
+                    </label-->                     
+                </div>
+                <button class="btn btn-primary"> Make a payment</button>
+	</div>
+	
+</div>

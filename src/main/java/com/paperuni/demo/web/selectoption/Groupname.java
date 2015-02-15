@@ -18,14 +18,24 @@ import com.paperuni.demo.model.TdRoleRepository;
 @Service
 public class Groupname {
 	
-	@Autowired
-	TdRoleRepository roleRepository;
-	
+	private static List<Groupname> groups;
 	private String name;
 	private String label;
 	
 	public Groupname(){
-		
+
+	}
+	
+	@Autowired
+	public void setRoleRepository(TdRoleRepository roleRepository){
+		List<Groupname> viewlist = new ArrayList<Groupname>();
+		List<TdRole> roleList = roleRepository.findAll(activeRoles());
+		if (roleList != null){
+			for (TdRole r: roleList){
+				viewlist.add(new Groupname(r.getName(), r.getDescription()));
+			}
+		}
+		groups = viewlist;		
 	}
 	
 	public Groupname(String name, String label){
@@ -49,15 +59,8 @@ public class Groupname {
 		this.label = label;
 	}
 
-	public List<Groupname> getAllGroupnames(){
-		List<Groupname> viewlist = new ArrayList<Groupname>();
-		List<TdRole> roleList = roleRepository.findAll(activeRoles());
-		if (roleList != null){
-			for (TdRole r: roleList){
-				viewlist.add(new Groupname(r.getName(), r.getDescription()));
-			}
-		}
-		return viewlist;
+	public static List<Groupname> getAllGroups(){
+		return groups;
 	}
 	
 	private Specification<TdRole> activeRoles(){

@@ -55,6 +55,9 @@
 	      <tiles:insertAttribute ignore="true" name="footer"/>
 
 	    </footer>
+	    
+	<!-- For customize page java scripts -->
+	<tiles:insertAttribute ignore="true" name="customscript" />	    
 
 	</body>
 </html>

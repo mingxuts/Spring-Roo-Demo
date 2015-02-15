@@ -58,7 +58,10 @@ public class StudentDashboardController {
 	private TdTaskRepository tdTaskRepository;
 	
 	@Autowired
-	private ConversionService conversionService;	
+	private ConversionService conversionService;
+	
+	@Autowired
+	TdUserinfoRepository tdUserinfoRepository;
 
 	@InitBinder
 	protected void initBinder(HttpServletRequest request,
@@ -72,7 +75,7 @@ public class StudentDashboardController {
 		return "studentdashboard/index";
 	}
 	
-	@RequestMapping(value="/listorders", method=RequestMethod.GET)
+	@RequestMapping(value="/listorder", method=RequestMethod.GET)
     public String listOrders(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel,
     		Principal principal) {
 		CustomUser user = (CustomUser)((Authentication) principal).getPrincipal();
@@ -91,7 +94,7 @@ public class StudentDashboardController {
         return "studentdashboard/listorders";
     }
 	
-	@RequestMapping(value="/listmessages", method=RequestMethod.GET, produces="text/html")
+	@RequestMapping(value="/listmessage", method=RequestMethod.GET, produces="text/html")
 	public String listMessages(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel, Principal principal){
 		CustomUser user = (CustomUser)((Authentication) principal).getPrincipal();
 		TdUserinfo userinfo = user.loadUserinfo(tdUSerinfoRepository);
@@ -109,6 +112,24 @@ public class StudentDashboardController {
 		
         uiModel.addAttribute("nrcount", tdMessageRepository.count(byCustomer(userinfo)));
 		return "studentdashboard/showmessage";
+	}
+	
+	@RequestMapping(value="/profile", method=RequestMethod.GET)
+	public String profile(Principal principal, Model uiModel){
+		CustomUser loginUser = (CustomUser) ((Authentication) principal).getPrincipal();
+		int id = loginUser.getUserID();
+        uiModel.addAttribute("tduserinfo", tdUserinfoRepository.findOne(id));
+        uiModel.addAttribute("itemId", id);	
+        uiModel.addAttribute("list", "f");
+        uiModel.addAttribute("create", "f");
+        uiModel.addAttribute("update", "f");
+        uiModel.addAttribute("delete", "f");
+        return "studentdashboard/profile";
+	}
+	
+	@RequestMapping(value="/paymentmethods", method=RequestMethod.GET)
+	public String paymentmethods(Model uiModel){
+		return "studentdashboard/paymentmethods";
 	}
 	
 	
@@ -134,7 +155,10 @@ public class StudentDashboardController {
         tdMessage.setCreateDate(today);
         tdMessage.setFileContentType(multipartFile.getContentType());
         tdMessageRepository.save(tdMessage);
-        return "redirect:/studentdashboard/index";
+        
+        populateEditForm(uiModel, new TdMessage(), user.loadUserinfo(tdUSerinfoRepository));
+        uiModel.addAttribute("MESSAGE_INFO", "message_student_message_sent_info");
+        return "studentdashboard/sendmsg";
     }
 	
 	void addDateTimeFormatPatterns(Model uiModel) {

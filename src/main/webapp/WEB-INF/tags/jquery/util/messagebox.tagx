@@ -15,6 +15,7 @@
   	<c:url var="messagefile" value="/tdmessages/${item.key}/file" />
   	
   	<section id="msg${rowCounter}">
+  		<c:if test="${item.message.source == 'W' || item.message.hasReview == 'true'}">
  		<div class="panel panel-default" id="msgpanel${rowCounter}">
 			<div class="panel-heading panel-display">
 				<dl class="dl-horizontal">
@@ -41,8 +42,9 @@
 				</c:when>
 			</c:choose>  		
   		</div>
+  		</c:if>
   	</section>
-  	
+  	<spring:eval var="rowCounter" expression="rowCounter + 1" />
   </c:forEach>  
   <c:if test="${not empty maxPages}">
     <util:pagination maxPages="${maxPages}" page="${param.page}" size="${param.size}" />

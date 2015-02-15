@@ -39,6 +39,9 @@ public class HomeController {
             }else if("ROLE_STUDENT".equals(aRoleDesc)){
                 page = "/studentdashboard" + page;
                 break;
+            }else if ("ROLE_SUBADMIN".equalsIgnoreCase(aRoleDesc)){
+            	page = "/subadmindashboard" + page;
+            	break;
             }
         }
         return "redirect:" + page;

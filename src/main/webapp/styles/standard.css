@@ -150,4 +150,11 @@ body {
 
 .msgbox-body-send{
 	
-}	
+}
+
+#alipay{
+    background-image: url(/demo/resources/images/icon-alipay.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin-left: 45px;
+}

@@ -3,6 +3,7 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
 	
+	<spring:message code="application_name" htmlEscape="false" var="app_name"/>
 	<c:url value="/home/profile" var="profile_urL" />
 	<c:url value="/tdorders?form" var="placeorder_url" />
 	<c:url value="/studentdashboard/listorders" var="myorders_url">	
@@ -15,15 +16,13 @@
 	</c:url>
 	<c:url value="/studentdashboard/sendmsg" var="sendmsg_url" />
 	
+	
+        <div class="jumbotron">
+            <h1><spring:message arguments="${app_name}" code="welcome_h3"/></h1>
+            <p><spring:message code="welcome_text"/></p>
+        </div>	
      <div class="page-header">
          <h3>Dashboard</h3>
          <p><spring:message code="student_dashboard_hasnotverified" /></p>
      </div>
-	<div>
-		 <p><a href="${profile_urL}" >My Profile</a></p>
-		 <p><a href="${placeorder_url}" >Place Order</a></p>
-		 <p><a href="${myorders_url}" >My Orders</a></p>
-		 <p><a href="${sendmsg_url }" >Send Message</a></p>
-		 <p><a href="${mymessages_url}" >Chat Room</a></p>
-	</div>
 </div>

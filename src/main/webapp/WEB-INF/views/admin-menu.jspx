@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" xmlns:spring="http://www.springframework.org/tags" 
+   xmlns:c="http://java.sun.com/jsp/jstl/core"	id="menu" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    
+    <menu:menu id="admin_menu">
+    	<menu:item url="/admindashboard/index" id="admindashboard" label="Dashboard"></menu:item>
+    	<menu:item url="/admindashboard/profile" id="adminprofile" label="Profile"></menu:item>
+    	<menu:item url="/admindashboard/enquiry?page=1&amp;size=20" id="newenquiry" label="New order enquiry"></menu:item>
+    	<menu:item url="/admindashboard/showtask" id="" label="Order In progress"></menu:item>
+    	<menu:item url="/admindashboard/addsubadmin" id="" label="Add admin"></menu:item>
+    	<menu:item url="/admindashboard/messages" id="" label="Check message"></menu:item>
+    	<menu:item url="/resources/j_spring_security_logout" id="" label="logout"></menu:item>    	
+    </menu:menu>   
+
+</div>

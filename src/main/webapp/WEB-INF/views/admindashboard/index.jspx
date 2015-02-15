@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields"  xmlns:c="http://java.sun.com/jsp/jstl/core" version="2.0">
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields"  xmlns:spring="http://www.springframework.org/tags" 
+	xmlns:c="http://java.sun.com/jsp/jstl/core" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
 	
+	<spring:message code="application_name" htmlEscape="false" var="app_name"/>
 	<c:url value="/home/profile" var="user_url" />
 	<c:url value="/admindashboard/enquiry" var="enquiry_url" >
 		<c:param name="page" value="1" />
 		<c:param name="size" value="10" />		
 	</c:url>
 	
+        <div class="jumbotron">
+            <h1><spring:message arguments="${app_name}" code="welcome_h3"/></h1>
+            <p><spring:message code="welcome_text"/></p>
+        </div>	
 	<div class="page-header">
 		<h3>Dashboard</h3>
-	</div>
-	<div>
-		<p><a href="${user_url}" >My Profile</a></p>
-		<p><a href="${enquiry_url}" >New Order Inquiry</a></p>
-		<p><a href="/home/profile" >Manage Coupon</a></p>
-		<p><a href="/home/profile" >Orders</a></p>
-		<p><a href="addsubadmin" >Create Subadmin</a></p>
-		<p><a href="./messages" >Messages</a></p>
 	</div>
 </div>

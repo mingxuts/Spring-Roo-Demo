@@ -1,21 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
 <tiles-definitions>
-    <definition extends="default" name="admindashboard/index">
+    <definition extends="admin-template" name="admindashboard/index">
         <put-attribute name="body" value="/WEB-INF/views/admindashboard/index.jspx"/>
     </definition>
-    <definition extends="default" name="admindashboard/enquiry">
+    <definition extends="admin-template" name="admindashboard/profile">
+        <put-attribute name="body" value="/WEB-INF/views/common/profile.jspx"/>
+    </definition>    
+    <definition extends="admin-template" name="admindashboard/enquiry">
         <put-attribute name="body" value="/WEB-INF/views/tdorders/list.jspx"/>
         <put-attribute name="customscript" value="/WEB-INF/views/admindashboard/enquirybottomscripts.jspx" />
     </definition>    
-    <definition extends="default" name="admindashboard/messages">
+    <definition extends="admin-template" name="admindashboard/messages">
     	<put-attribute name="body" value="/WEB-INF/views/admindashboard/messages.jspx" />
     </definition>
-    <definition extends="default" name="admindashboard/editmessage">
+    <definition extends="admin-template" name="admindashboard/editmessage">
     	<put-attribute name="body" value="/WEB-INF/views/tdmessages/send.jspx" />
     	<put-attribute name="customscript" value="/WEB-INF/views/admindashboard/editmessagebottomscripts.jspx" />
     </definition>  
-    <definition extends="default" name="admindashboard/addsubadmin">
+    <definition extends="admin-template" name="admindashboard/addsubadmin">
     	<put-attribute name="body" value="/WEB-INF/views/tduserinfoes/create.jspx" />
+    </definition>
+    <definition  extends="admin-template" name="admindashboard/showtask">
+    	<put-attribute name="body" value="/WEB-INF/views/tdtasks/list.jspx"></put-attribute>
     </definition>      
 </tiles-definitions>

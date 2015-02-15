@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
 <tiles-definitions>
-    <definition extends="default" name="studentdashboard/index">
+    <definition extends="student-template" name="studentdashboard/index">
         <put-attribute name="body" value="/WEB-INF/views/studentdashboard/index.jspx"/>
     </definition>
     
-    <definition extends="default" name="studentdashboard/showmessage">
+    <definition extends="student-template" name="studentdashboard/paymentmethods">
+        <put-attribute name="body" value="/WEB-INF/views/studentdashboard/paymentmethods.jspx"/>
+    </definition>     
+    
+    <definition extends="student-template" name="studentdashboard/showmessage">
         <put-attribute name="body" value="/WEB-INF/views/studentdashboard/showmessage.jspx"/>
     </definition>   
     
-    <definition extends="default" name="studentdashboard/listorders">
+    <definition extends="student-template" name="studentdashboard/listorders">
         <put-attribute name="body" value="/WEB-INF/views/tdorders/list.jspx"/>
     </definition>  
     
-    <definition extends="default" name="studentdashboard/sendmsg">
+    <definition extends="student-template" name="studentdashboard/sendmsg">
         <put-attribute name="body" value="/WEB-INF/views/tdmessages/send.jspx"/>
         <put-attribute name="customscript" value="/WEB-INF/views/studentdashboard/sendmsgbottomscripts.jspx" />
-    </definition>           
+    </definition>
+    
+    <definition extends="student-template" name="studentdashboard/profile">
+        <put-attribute name="body" value="/WEB-INF/views/common/profile.jspx"/>
+    </definition>             
 </tiles-definitions>

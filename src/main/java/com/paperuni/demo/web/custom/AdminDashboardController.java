@@ -28,7 +28,9 @@ import com.paperuni.demo.model.TdMessagePK;
 import com.paperuni.demo.model.TdMessageRepository;
 import com.paperuni.demo.model.TdOrder;
 import com.paperuni.demo.model.TdOrderRepository;
+import com.paperuni.demo.model.TdTaskRepository;
 import com.paperuni.demo.model.TdUserinfo;
+import com.paperuni.demo.model.TdUserinfoRepository;
 import com.paperuni.demo.web.selectoption.AdminMessageconverter;
 import com.paperuni.demo.web.selectoption.Groupname;
 
@@ -46,7 +48,10 @@ public class AdminDashboardController {
 	private ConversionService conversionService;
 	
 	@Autowired
-	Groupname groupName;
+	TdUserinfoRepository tdUserinfoRepository;
+	
+	@Autowired
+	TdTaskRepository tdTaskRepository;
 
 	@RequestMapping(value="/index", method=RequestMethod.GET)
 	public String index(){
@@ -55,15 +60,7 @@ public class AdminDashboardController {
 	
 	@RequestMapping(value="/addsubadmin", method=RequestMethod.GET)
 	public String addSubadmin(Principal principal, Model uiModel){
-		TdUserinfo subadmin = new TdUserinfo();
-		subadmin.setGroupName("ROLE_SUBADMIN");
-		subadmin.setHasVerified(true);
-		subadmin.setPasswordNonExpired(true);
-		CustomUser loginUser = (CustomUser) ((Authentication) principal).getPrincipal();
-		int id = loginUser.getUserID();		
-		subadmin.setCreateBy(id);
-		uiModel.addAttribute("tdUserinfo", subadmin);
-		uiModel.addAttribute("groupnames", groupName.getAllGroupnames());
+		renderSubadminForm(principal, uiModel);
 		return "admindashboard/addsubadmin";
 	}
 	
@@ -113,6 +110,25 @@ public class AdminDashboardController {
 		return "redirect:/admindashboard/messages";
 	}
 	
+	@RequestMapping(value="/profile", method=RequestMethod.GET)
+	public String profile(Principal principal, Model uiModel){
+		CustomUser loginUser = (CustomUser) ((Authentication) principal).getPrincipal();
+		int id = loginUser.getUserID();
+        uiModel.addAttribute("tduserinfo", tdUserinfoRepository.findOne(id));
+        uiModel.addAttribute("itemId", id);	
+        uiModel.addAttribute("list", "f");
+        uiModel.addAttribute("create", "f");
+        uiModel.addAttribute("update", "f");
+        uiModel.addAttribute("delete", "f");
+		return "admindashboard/profile";		
+	}
+	
+	@RequestMapping(value="/showtask", method=RequestMethod.GET)
+	public String showtask(Principal principal, Model uiModel){
+		uiModel.addAttribute("tdtasks", tdTaskRepository.findAll());
+		return "admindashboard/showtask";
+	}
+	
 	
 	private Specification<TdMessage> messageIsnotRead(){
 		return MessageSpecifications.Hasnotread();
@@ -143,5 +159,17 @@ public class AdminDashboardController {
 			}
 		}
 		return viewlist;
+	}
+	
+	public static void renderSubadminForm(Principal principal, Model uiModel){
+		TdUserinfo subadmin = new TdUserinfo();
+		subadmin.setGroupName("ROLE_SUBADMIN");
+		subadmin.setHasVerified(true);
+		subadmin.setPasswordNonExpired(true);
+		CustomUser loginUser = (CustomUser) ((Authentication) principal).getPrincipal();
+		int id = loginUser.getUserID();		
+		subadmin.setCreateBy(id);
+		uiModel.addAttribute("tdUserinfo", subadmin);
+		uiModel.addAttribute("groupnames", Groupname.getAllGroups());		
 	}
 }

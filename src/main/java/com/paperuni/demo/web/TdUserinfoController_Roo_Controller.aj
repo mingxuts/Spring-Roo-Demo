@@ -30,16 +30,7 @@ privileged aspect TdUserinfoController_Roo_Controller {
     @Autowired
     TdTaskRepository TdUserinfoController.tdTaskRepository;
     
-    @RequestMapping(method = RequestMethod.POST, produces = "text/html")
-    public String TdUserinfoController.create(@Valid TdUserinfo tdUserinfo, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            populateEditForm(uiModel, tdUserinfo);
-            return "tduserinfoes/create";
-        }
-        uiModel.asMap().clear();
-        tdUserinfoRepository.save(tdUserinfo);
-        return "redirect:/tduserinfoes/" + encodeUrlPathSegment(tdUserinfo.getId().toString(), httpServletRequest);
-    }
+    
     
     @RequestMapping(params = "form", produces = "text/html")
     public String TdUserinfoController.createForm(Model uiModel) {
