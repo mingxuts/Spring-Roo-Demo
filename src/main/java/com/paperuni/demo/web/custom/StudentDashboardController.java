@@ -75,7 +75,7 @@ public class StudentDashboardController {
 		return "studentdashboard/index";
 	}
 	
-	@RequestMapping(value="/listorder", method=RequestMethod.GET)
+	@RequestMapping(value="/myorder", method=RequestMethod.GET)
     public String listOrders(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel,
     		Principal principal) {
 		CustomUser user = (CustomUser)((Authentication) principal).getPrincipal();
@@ -91,7 +91,7 @@ public class StudentDashboardController {
             uiModel.addAttribute("tdorders", tdOrderRepository.findAll(OrderSpecifications.byCustomer(customerId)));
         }
         addDateTimeFormatPatterns(uiModel);
-        return "studentdashboard/listorders";
+        return "studentdashboard/myorder";
     }
 	
 	@RequestMapping(value="/listmessage", method=RequestMethod.GET, produces="text/html")

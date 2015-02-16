@@ -10,9 +10,7 @@ import com.paperuni.demo.model.TdTaskRepository;
 import com.paperuni.demo.web.TdOrderController;
 import java.io.UnsupportedEncodingException;
 import javax.servlet.http.HttpServletRequest;
-import org.joda.time.format.DateTimeFormat;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,14 +30,7 @@ privileged aspect TdOrderController_Roo_Controller {
     @Autowired
     TdTaskRepository TdOrderController.tdTaskRepository;
     
-    @RequestMapping(value = "/{id}", produces = "text/html")
-    public String TdOrderController.show(@PathVariable("id") Integer id, Model uiModel) {
-        addDateTimeFormatPatterns(uiModel);
-        uiModel.addAttribute("tdorder", tdOrderRepository.findOne(id));
-        uiModel.addAttribute("itemId", id);
-        return "tdorders/show";
-    }
-    
+        
     @RequestMapping(produces = "text/html")
     public String TdOrderController.list(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
         if (page != null || size != null) {
@@ -70,8 +61,6 @@ privileged aspect TdOrderController_Roo_Controller {
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
         return "redirect:/tdorders";
     }
-    
-    
     
     void TdOrderController.populateEditForm(Model uiModel, TdOrder tdOrder) {
         uiModel.addAttribute("tdOrder", tdOrder);

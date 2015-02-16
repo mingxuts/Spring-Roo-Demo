@@ -15,7 +15,7 @@
         <field:display field="courseLevel" id="s_com_paperuni_demo_model_TdTask_courseLevel" object="${tdtask}" z="6MjzAN5fHvT/z1QB4xHx+4wTgIo="/>
         <field:display field="coupon" id="s_com_paperuni_demo_model_TdTask_coupon" object="${tdtask}" z="g/qWip2B+kZ292QkKsd12x9MrQk="/>
         <field:display calendar="true" dateTimePattern="${tdTask_createdate_date_format}" field="createDate" id="s_com_paperuni_demo_model_TdTask_createDate" object="${tdtask}" z="WQGQCjyVlbCL4trh1J7z5nPcoj0="/>
-        <field:display field="file" id="s_com_paperuni_demo_model_TdTask_file" object="${tdtask}" z="cDrYwJhHXmf2fYVg+J/187Q/RkM="/>
+        <field:display field="file" id="s_com_paperuni_demo_model_TdTask_file" object="${tdtask}" z="cDrYwJhHXmf2fYVg+J/187Q/RkM=" render="false"/>
         <field:display field="format" id="s_com_paperuni_demo_model_TdTask_format" object="${tdtask}" z="hq64OSKdhTlXGN1+flxYjGSQftY="/>
         <field:display field="referencing" id="s_com_paperuni_demo_model_TdTask_referencing" object="${tdtask}" z="e6ogNlBNNV72JNJqqZQqOo4ZtPE="/>
         <field:display field="sourcesCount" id="s_com_paperuni_demo_model_TdTask_sourcesCount" object="${tdtask}" z="58f0Wmvc6e5uC8y1aBLrU70cr1Y="/>
@@ -29,5 +29,16 @@
         <field:display field="allowAllSubject" id="s_com_paperuni_demo_model_TdTask_allowAllSubject" object="${tdtask}" z="/y2VfsZC671PpB4ruxFPxvhauPI="/>
         <field:display field="fileContentType" id="s_com_paperuni_demo_model_TdTask_fileContentType" object="${tdtask}" z="K8ivXlYYYtrRcLd6b7+6JV7oA50="/>
         <field:display field="includeFigure" id="s_com_paperuni_demo_model_TdTask_includeFigure" object="${tdtask}" z="FcsELYMOob0ArR3LnFlhnaNZbLo="/>
+        <field:display field="fileName" id="s_com_paperuni_demo_model_TdTask_fileName" object="${tdtask}" z="1p25QuQucU7l18sk8edpBvva29A=" render="false"/>
+        <field:display field="fileSize" id="s_com_paperuni_demo_model_TdTask_fileSize" object="${tdtask}" z="JF21z+hR0WThk6bFCdZp7pJLyZY=" render="false"/>
+        <field:frame field="url" id="s_com_paperuni_demo_model_TdOrder_url" label="Content" object="${tdtask}" render="true" z="user-managed"/>
     </page:show>
+    
+    <script type="text/javascript">
+    $('iframe').load(function() {
+        this.style.height =
+        this.contentWindow.document.body.offsetHeight + 'px';
+        $('iframe').width($('iframe').contents().width()+30);         
+    });    
+    </script>    
 </div>

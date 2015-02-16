@@ -60,6 +60,9 @@ privileged aspect TdMessageDataOnDemand_Roo_DataOnDemand {
     
     public void TdMessageDataOnDemand.setBody(TdMessage obj, int index) {
         String body = "body_" + index;
+        if (body.length() > 255) {
+            body = body.substring(0, 255);
+        }
         obj.setBody(body);
     }
     
@@ -93,6 +96,9 @@ privileged aspect TdMessageDataOnDemand_Roo_DataOnDemand {
     
     public void TdMessageDataOnDemand.setLink(TdMessage obj, int index) {
         String link = "link_" + index;
+        if (link.length() > 255) {
+            link = link.substring(0, 255);
+        }
         obj.setLink(link);
     }
     

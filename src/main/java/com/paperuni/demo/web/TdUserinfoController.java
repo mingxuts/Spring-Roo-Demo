@@ -1,6 +1,7 @@
 package com.paperuni.demo.web;
 import java.security.Principal;
 
+import com.paperuni.demo.model.TdTaskRepository;
 import com.paperuni.demo.model.TdUserinfo;
 import com.paperuni.demo.web.custom.AdminDashboardController;
 import com.paperuni.demo.web.selectoption.Groupname;
@@ -22,6 +23,9 @@ import org.gvnix.addon.web.mvc.jquery.GvNIXWebJQuery;
 @RooWebScaffold(path = "tduserinfoes", formBackingObject = TdUserinfo.class)
 @GvNIXWebJQuery
 public class TdUserinfoController {
+	
+	@Autowired
+	TdTaskRepository tdTaskRepository;
 
 	void populateEditForm(Model uiModel, TdUserinfo tdUserinfo) {
         uiModel.addAttribute("tdUserinfo", tdUserinfo);

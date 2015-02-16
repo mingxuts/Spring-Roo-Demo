@@ -31,5 +31,7 @@
         <field:checkbox field="allowAllSubject" id="c_com_paperuni_demo_model_TdTask_allowAllSubject" z="Nt0sKgbRWUMiZM9HYY6+6fI6ZIc="/>
         <field:input field="fileContentType" id="c_com_paperuni_demo_model_TdTask_fileContentType" z="EsN7QdYQTApkHd41SbBCukYSDhY="/>
         <field:input field="includeFigure" id="c_com_paperuni_demo_model_TdTask_includeFigure" z="1ZFZF6DHqbZ7NL7hp6dQlfFfxiI="/>
+        <field:input field="fileName" id="c_com_paperuni_demo_model_TdTask_fileName" z="RsH/QzEq4fWnk0Ebhts3/GJ5pOI=" render="false"/>
+        <field:input field="fileSize" id="c_com_paperuni_demo_model_TdTask_fileSize" validationMessageCode="field_invalid_integer" z="Pi2PDXNOhNhlw2zjTQJkqlPfFCU=" render="false"/>
     </form:update>
 </div>

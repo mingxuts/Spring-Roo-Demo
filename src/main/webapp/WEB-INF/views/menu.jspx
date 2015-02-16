@@ -4,7 +4,7 @@
     <jsp:output omit-xml-declaration="yes"/>
     <menu:menu id="_menu" z="nZaf43BjUg1iM0v70HJVEsXDopc=">
         <menu:category id="c_tdtask" z="KAGhGXauEt+h+PThWcBOIGaE6Cg=">
-            <menu:item id="i_tdtask_new" messageCode="global_menu_new" url="/tdtasks?form=0" z="XdPaM/46BxjUQAEsWXYPFEzUYQg="/>
+            <menu:item id="i_tdtask_new" messageCode="global_menu_new" url="/tdtasks?form=0" z="user-managed"/>
             <menu:item id="i_tdtask_list" messageCode="global_menu_list" url="/tdtasks?page=1&amp;size=${empty param.size ? 10 : param.size}" z="gwd/lHhSA6dJ02fcbpf80dpJWXk="/>
         </menu:category>
         <menu:category id="c_tduserinfo" z="1SYuPo4DMozCvTkeldttYCwlepY=">

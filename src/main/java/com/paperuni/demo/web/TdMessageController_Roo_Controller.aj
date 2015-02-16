@@ -21,13 +21,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.util.UriUtils;
 import org.springframework.web.util.WebUtils;
 
 privileged aspect TdMessageController_Roo_Controller {
-    
-    private ConversionService TdMessageController.conversionService;
     
     @Autowired
     TdMessageRepository TdMessageController.tdMessageRepository;
@@ -41,8 +38,12 @@ privileged aspect TdMessageController_Roo_Controller {
         this.conversionService = conversionService;
     }
 
-        
-        
+    @RequestMapping(params = "form", produces = "text/html")
+    public String TdMessageController.createForm(Model uiModel) {
+        populateEditForm(uiModel, new TdMessage());
+        return "tdmessages/create";
+    }
+    
     @RequestMapping(value = "/{id}", produces = "text/html")
     public String TdMessageController.show(@PathVariable("id") TdMessagePK id, Model uiModel) {
         addDateTimeFormatPatterns(uiModel);
@@ -50,14 +51,6 @@ privileged aspect TdMessageController_Roo_Controller {
         uiModel.addAttribute("itemId", conversionService.convert(id, String.class));
         return "tdmessages/show";
     }
-    
-	@RequestMapping(params = "form", produces = "text/html")
-    public String TdMessageController.createForm(Model uiModel) {
-        populateEditForm(uiModel, new TdMessage());
-        return "tdmessages/create";
-    }
-
-	   
     
     @RequestMapping(produces = "text/html")
     public String TdMessageController.list(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {

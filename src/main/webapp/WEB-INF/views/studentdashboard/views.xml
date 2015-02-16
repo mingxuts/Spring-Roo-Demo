@@ -13,7 +13,7 @@
         <put-attribute name="body" value="/WEB-INF/views/studentdashboard/showmessage.jspx"/>
     </definition>   
     
-    <definition extends="student-template" name="studentdashboard/listorders">
+    <definition extends="student-template" name="studentdashboard/myorder">
         <put-attribute name="body" value="/WEB-INF/views/tdorders/list.jspx"/>
     </definition>  
     

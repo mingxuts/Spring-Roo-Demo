@@ -3,7 +3,6 @@
 
 package com.paperuni.demo.web;
 
-import com.paperuni.demo.model.TdTaskRepository;
 import com.paperuni.demo.model.TdUserinfo;
 import com.paperuni.demo.model.TdUserinfoRepository;
 import com.paperuni.demo.web.TdUserinfoController;
@@ -26,11 +25,6 @@ privileged aspect TdUserinfoController_Roo_Controller {
     
     @Autowired
     TdUserinfoRepository TdUserinfoController.tdUserinfoRepository;
-    
-    @Autowired
-    TdTaskRepository TdUserinfoController.tdTaskRepository;
-    
-    
     
     @RequestMapping(params = "form", produces = "text/html")
     public String TdUserinfoController.createForm(Model uiModel) {
@@ -92,7 +86,6 @@ privileged aspect TdUserinfoController_Roo_Controller {
         uiModel.addAttribute("tdUserinfo_createdate_date_format", DateTimeFormat.patternForStyle("MM", LocaleContextHolder.getLocale()));
     }
     
-        
     String TdUserinfoController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {
         String enc = httpServletRequest.getCharacterEncoding();
         if (enc == null) {

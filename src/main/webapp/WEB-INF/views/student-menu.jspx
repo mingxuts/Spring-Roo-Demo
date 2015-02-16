@@ -8,17 +8,15 @@
     <menu:menu id="student_menu">
     	<menu:item url="/studentdashboard/index" id="studentdashboard" label="Dashboard"></menu:item>
     	<menu:item url="/studentdashboard/profile" id="student_profile" label="Profile"></menu:item>
-
-    	<menu:category id="c_chat" label="Chat">
-    		<menu:item url="/studentdashboard/sendmsg" id="studentsendmsg" label="Send message"></menu:item>
-    		<menu:item url="/studentdashboard/listmessage?page=1&amp;size=10" id="showmessage" label="Receive message"></menu:item>
-    	</menu:category>
+   		<menu:item url="/studentdashboard/sendmsg" id="studentsendmsg" label="Send message"></menu:item>
+   		<menu:item url="/studentdashboard/listmessage?page=1&amp;size=10" id="showmessage" label="Chat Room"></menu:item>
     	<menu:category id="c_payment" label="Payment">
     		<menu:item url="/studentdashboard/paymentmethods" id="" label="Make a payment"></menu:item>
     		<menu:item url="" id="" label="Payment History"></menu:item>
     	</menu:category>
 <!--     	<menu:item url="/studentdashboard/help" id="" label="Help  Support"></menu:item> -->
     	<menu:item url="/tdorders?form" id="" label="Place Order"></menu:item>
+    	<menu:item url="/studentdashboard/myorder?page=1&amp;size=20" id="vieworders" label="View Orders"></menu:item>
     	<menu:item url="/resources/j_spring_security_logout" id="" label="logout"></menu:item>   	
     </menu:menu>
 

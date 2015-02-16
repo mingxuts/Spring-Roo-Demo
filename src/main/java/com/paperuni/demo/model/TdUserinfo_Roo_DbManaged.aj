@@ -22,17 +22,17 @@ privileged aspect TdUserinfo_Roo_DbManaged {
     @OneToMany(mappedBy = "customerId")
     private Set<TdTask> TdUserinfo.tdTasks1;
     
-    @Column(name = "Email", length = 65)
-    @NotNull
-    private String TdUserinfo.email;
+    @Column(name = "City", length = 35)
+    private String TdUserinfo.city;
     
-    @Column(name = "LoginPassword", length = 50)
-    @NotNull
-    private String TdUserinfo.loginPassword;
+    @Column(name = "ContactID", length = 35)
+    private String TdUserinfo.contactId;
     
-    @Column(name = "GroupName", length = 255)
-    @NotNull
-    private String TdUserinfo.groupName;
+    @Column(name = "ContactType", length = 8)
+    private String TdUserinfo.contactType;
+    
+    @Column(name = "Country", length = 50)
+    private String TdUserinfo.country;
     
     @Column(name = "CreateBy")
     private Integer TdUserinfo.createBy;
@@ -42,29 +42,29 @@ privileged aspect TdUserinfo_Roo_DbManaged {
     @DateTimeFormat(style = "MM")
     private Calendar TdUserinfo.createDate;
     
-    @Column(name = "PreferName", length = 20)
-    private String TdUserinfo.preferName;
-    
-    @Column(name = "Country", length = 50)
-    private String TdUserinfo.country;
-    
-    @Column(name = "City", length = 35)
-    private String TdUserinfo.city;
-    
-    @Column(name = "ContactType", length = 8)
-    private String TdUserinfo.contactType;
-    
-    @Column(name = "ContactID", length = 35)
-    private String TdUserinfo.contactId;
+    @Column(name = "Email", length = 65)
+    @NotNull
+    private String TdUserinfo.email;
     
     @Column(name = "EmailCode", length = 50)
     private String TdUserinfo.emailCode;
     
-    @Column(name = "PasswordNonExpired")
-    private Boolean TdUserinfo.passwordNonExpired;
+    @Column(name = "GroupName", length = 255)
+    @NotNull
+    private String TdUserinfo.groupName;
     
     @Column(name = "HasVerified")
     private Boolean TdUserinfo.hasVerified;
+    
+    @Column(name = "LoginPassword", length = 50)
+    @NotNull
+    private String TdUserinfo.loginPassword;
+    
+    @Column(name = "PasswordNonExpired")
+    private Boolean TdUserinfo.passwordNonExpired;
+    
+    @Column(name = "PreferName", length = 20)
+    private String TdUserinfo.preferName;
     
     @Column(name = "Special", length = 255)
     private String TdUserinfo.special;
@@ -85,28 +85,36 @@ privileged aspect TdUserinfo_Roo_DbManaged {
         this.tdTasks1 = tdTasks1;
     }
     
-    public String TdUserinfo.getEmail() {
-        return email;
+    public String TdUserinfo.getCity() {
+        return city;
     }
     
-    public void TdUserinfo.setEmail(String email) {
-        this.email = email;
+    public void TdUserinfo.setCity(String city) {
+        this.city = city;
     }
     
-    public String TdUserinfo.getLoginPassword() {
-        return loginPassword;
+    public String TdUserinfo.getContactId() {
+        return contactId;
     }
     
-    public void TdUserinfo.setLoginPassword(String loginPassword) {
-        this.loginPassword = loginPassword;
+    public void TdUserinfo.setContactId(String contactId) {
+        this.contactId = contactId;
     }
     
-    public String TdUserinfo.getGroupName() {
-        return groupName;
+    public String TdUserinfo.getContactType() {
+        return contactType;
     }
     
-    public void TdUserinfo.setGroupName(String groupName) {
-        this.groupName = groupName;
+    public void TdUserinfo.setContactType(String contactType) {
+        this.contactType = contactType;
+    }
+    
+    public String TdUserinfo.getCountry() {
+        return country;
+    }
+    
+    public void TdUserinfo.setCountry(String country) {
+        this.country = country;
     }
     
     public Integer TdUserinfo.getCreateBy() {
@@ -125,44 +133,12 @@ privileged aspect TdUserinfo_Roo_DbManaged {
         this.createDate = createDate;
     }
     
-    public String TdUserinfo.getPreferName() {
-        return preferName;
+    public String TdUserinfo.getEmail() {
+        return email;
     }
     
-    public void TdUserinfo.setPreferName(String preferName) {
-        this.preferName = preferName;
-    }
-    
-    public String TdUserinfo.getCountry() {
-        return country;
-    }
-    
-    public void TdUserinfo.setCountry(String country) {
-        this.country = country;
-    }
-    
-    public String TdUserinfo.getCity() {
-        return city;
-    }
-    
-    public void TdUserinfo.setCity(String city) {
-        this.city = city;
-    }
-    
-    public String TdUserinfo.getContactType() {
-        return contactType;
-    }
-    
-    public void TdUserinfo.setContactType(String contactType) {
-        this.contactType = contactType;
-    }
-    
-    public String TdUserinfo.getContactId() {
-        return contactId;
-    }
-    
-    public void TdUserinfo.setContactId(String contactId) {
-        this.contactId = contactId;
+    public void TdUserinfo.setEmail(String email) {
+        this.email = email;
     }
     
     public String TdUserinfo.getEmailCode() {
@@ -173,12 +149,12 @@ privileged aspect TdUserinfo_Roo_DbManaged {
         this.emailCode = emailCode;
     }
     
-    public Boolean TdUserinfo.getPasswordNonExpired() {
-        return passwordNonExpired;
+    public String TdUserinfo.getGroupName() {
+        return groupName;
     }
     
-    public void TdUserinfo.setPasswordNonExpired(Boolean passwordNonExpired) {
-        this.passwordNonExpired = passwordNonExpired;
+    public void TdUserinfo.setGroupName(String groupName) {
+        this.groupName = groupName;
     }
     
     public Boolean TdUserinfo.getHasVerified() {
@@ -187,6 +163,30 @@ privileged aspect TdUserinfo_Roo_DbManaged {
     
     public void TdUserinfo.setHasVerified(Boolean hasVerified) {
         this.hasVerified = hasVerified;
+    }
+    
+    public String TdUserinfo.getLoginPassword() {
+        return loginPassword;
+    }
+    
+    public void TdUserinfo.setLoginPassword(String loginPassword) {
+        this.loginPassword = loginPassword;
+    }
+    
+    public Boolean TdUserinfo.getPasswordNonExpired() {
+        return passwordNonExpired;
+    }
+    
+    public void TdUserinfo.setPasswordNonExpired(Boolean passwordNonExpired) {
+        this.passwordNonExpired = passwordNonExpired;
+    }
+    
+    public String TdUserinfo.getPreferName() {
+        return preferName;
+    }
+    
+    public void TdUserinfo.setPreferName(String preferName) {
+        this.preferName = preferName;
     }
     
     public String TdUserinfo.getSpecial() {

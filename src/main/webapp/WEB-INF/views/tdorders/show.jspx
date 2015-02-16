@@ -14,11 +14,22 @@
         <field:display field="courseLevel" id="s_com_paperuni_demo_model_TdOrder_courseLevel" object="${tdorder}" z="Oav6tYdHiEjSC1tMviPqsIonsA0="/>
         <field:display field="coupon" id="s_com_paperuni_demo_model_TdOrder_coupon" object="${tdorder}" z="faAW3K3h69d68yzXycee7q9ER7Q="/>
         <field:display calendar="true" dateTimePattern="${tdOrder_createdate_date_format}" field="createDate" id="s_com_paperuni_demo_model_TdOrder_createDate" object="${tdorder}" z="DqpSaVxSximdy1cCzaHFz+10siQ="/>
-        <field:display field="file" id="s_com_paperuni_demo_model_TdOrder_file" object="${tdorder}" z="w+81DAjjbhsuyUqzwbpSkoUWX/4="/>
+        <field:display field="file" id="s_com_paperuni_demo_model_TdOrder_file" object="${tdorder}" z="w+81DAjjbhsuyUqzwbpSkoUWX/4=" render="false"/>
         <field:display field="format" id="s_com_paperuni_demo_model_TdOrder_format" object="${tdorder}" z="NAVjSaO3dnaBnW8yUuiVVORkaVM="/>
         <field:display field="referencing" id="s_com_paperuni_demo_model_TdOrder_referencing" object="${tdorder}" z="ueuQmehfu0SmJE6KLKnLJf2aGQs="/>
         <field:display field="sourcesCount" id="s_com_paperuni_demo_model_TdOrder_sourcesCount" object="${tdorder}" z="7xCC8cEnu2NjdPtzDjJm3QBS1y0="/>
         <field:display field="fileContentType" id="s_com_paperuni_demo_model_TdOrder_fileContentType" object="${tdorder}" z="id/lhPCDgpU5uqpjZYTl5oJC56U="/>
         <field:display field="includeFigure" id="s_com_paperuni_demo_model_TdOrder_includeFigure" object="${tdorder}" z="nf3b+oc5Wd8N5XW2WRpHtOt19us="/>
+        <field:display field="fileName" id="s_com_paperuni_demo_model_TdOrder_fileName" object="${tdorder}" z="9J+xngOQ5Q39ayRr2txmb56MicU=" render="false"/>
+        <field:display field="fileSize" id="s_com_paperuni_demo_model_TdOrder_fileSize" object="${tdorder}" z="ciw1g+ibZR3wV3EX7EO5VBpmdzQ=" render="false"/>
+        <field:frame field="url" id="s_com_paperuni_demo_model_TdOrder_url" label="Content" object="${tdorder}" render="true" z="user-managed"/>
     </page:show>
+    
+    <script type="text/javascript">
+    $('iframe').load(function() {
+        this.style.height =
+        this.contentWindow.document.body.offsetHeight + 'px';
+        $('iframe').width($('iframe').contents().width()+30);         
+    });    
+    </script>
 </div>

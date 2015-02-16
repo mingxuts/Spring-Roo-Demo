@@ -3,13 +3,13 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_com_paperuni_demo_model_TdOrder" items="${tdorders}" z="yHT1aX+6Rvl55Yh5cgkNVJWzgHY=">
-        <table:table data="${tdorders}" id="l_com_paperuni_demo_model_TdOrder" path="/tdorders" z="XHj7UD6zso0Ok8RXgjbDZH869us=" update="false">
+        <table:table data="${tdorders}" id="l_com_paperuni_demo_model_TdOrder" path="/tdorders" update="false" z="user-managed">
             <table:column id="c_com_paperuni_demo_model_TdOrder_taskId" property="taskId" z="/XPAsxnggBnn3Md43/GIc+EWTG0="/>
             <table:column id="c_com_paperuni_demo_model_TdOrder_subjectId" property="subjectId" z="Wvm9Sb8c4BBp3A7FYJe8BbScWEU="/>
-            <table:column id="c_com_paperuni_demo_model_TdOrder_orderStatus" property="orderStatus" z="L1g/5Kv4ixtO98Bdw66R2EQDlSI="/>
-            <table:column calendar="true" dateTimePattern="${tdOrder_startdate_date_format}" id="c_com_paperuni_demo_model_TdOrder_startDate" property="startDate" z="vu6spT77NTEGDbw0ie2D/tQD2fw="/>
-            <table:column calendar="true" dateTimePattern="${tdOrder_deadline_date_format}" id="c_com_paperuni_demo_model_TdOrder_deadLine" property="deadLine" z="YZjAoEmkWWMCAnDOXxGsGlk8YGM="/>
-            <table:column id="c_com_paperuni_demo_model_TdOrder_wordCount" property="wordCount" z="sPx0p6nTbrtnPU/JguiVpmaI2AE="/>
+            <table:column id="c_com_paperuni_demo_model_TdOrder_coupon" property="coupon" z="MDJ9dLjn2XvG5svX2k5iDkkJbww="/>
+            <table:column id="c_com_paperuni_demo_model_TdOrder_courseLevel" property="courseLevel" z="Z6L8Tr9dcPcClw91okv1D0ngtZE="/>
+            <table:column calendar="true" dateTimePattern="${tdOrder_createdate_date_format}" id="c_com_paperuni_demo_model_TdOrder_createDate" property="createDate" z="JfP9ACWW+TGEuw9RxoVmNwhS+5s="/>
+            <table:column id="c_com_paperuni_demo_model_TdOrder_customerId" property="customerId" z="L25u8BIeOMQcTd3QSHUNseLeTFI="/>
         </table:table>
     </page:list>
 </div>

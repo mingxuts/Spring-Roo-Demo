@@ -20,5 +20,7 @@
         <field:input field="sourcesCount" id="c_com_paperuni_demo_model_TdOrder_sourcesCount" validationMessageCode="field_invalid_integer" z="b9I4XWZRbeRTkYX7DrpVUaYxbYo="/>
         <field:input field="fileContentType" id="c_com_paperuni_demo_model_TdOrder_fileContentType" render="false" z="user-managed"/>
         <field:input field="includeFigure" id="c_com_paperuni_demo_model_TdOrder_includeFigure" z="r0qpd01s5jseHPbhZqxeMAHUDsA="/>
+        <field:input field="fileName" id="c_com_paperuni_demo_model_TdOrder_fileName" z="EDSCKhGLAVVnJZ3jlbNChhoeGCA=" render="false"/>
+        <field:input field="fileSize" id="c_com_paperuni_demo_model_TdOrder_fileSize" validationMessageCode="field_invalid_integer" z="k7Jl8xAgv3CZZRp2hyrErSuPzOQ=" render="false"/>
     </form:update>
 </div>

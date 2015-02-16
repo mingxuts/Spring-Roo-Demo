@@ -15,12 +15,12 @@ privileged aspect TdSubject_Roo_DbManaged {
     @OneToMany(mappedBy = "subjectId")
     private Set<TdOrder> TdSubject.tdOrders;
     
+    @Column(name = "Description", length = 70)
+    private String TdSubject.description;
+    
     @Column(name = "Name", length = 20)
     @NotNull
     private String TdSubject.name;
-    
-    @Column(name = "Description", length = 70)
-    private String TdSubject.description;
     
     public Set<TdOrder> TdSubject.getTdOrders() {
         return tdOrders;
@@ -30,20 +30,20 @@ privileged aspect TdSubject_Roo_DbManaged {
         this.tdOrders = tdOrders;
     }
     
-    public String TdSubject.getName() {
-        return name;
-    }
-    
-    public void TdSubject.setName(String name) {
-        this.name = name;
-    }
-    
     public String TdSubject.getDescription() {
         return description;
     }
     
     public void TdSubject.setDescription(String description) {
         this.description = description;
+    }
+    
+    public String TdSubject.getName() {
+        return name;
+    }
+    
+    public void TdSubject.setName(String name) {
+        this.name = name;
     }
     
 }

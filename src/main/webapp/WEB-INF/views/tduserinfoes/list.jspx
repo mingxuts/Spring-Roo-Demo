@@ -4,10 +4,10 @@
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_com_paperuni_demo_model_TdUserinfo" items="${tduserinfoes}" z="WcWJ+YOjzkgC+5EZHsOy/H2Txik=">
         <table:table data="${tduserinfoes}" id="l_com_paperuni_demo_model_TdUserinfo" path="/tduserinfoes" z="mIwAlJfVM3R2+gZ5ayTSxKoS6Mw=">
-            <table:column id="c_com_paperuni_demo_model_TdUserinfo_email" property="email" z="FtUsvfOdgOzUazj+grP1jUGgzcs="/>
-            <table:column id="c_com_paperuni_demo_model_TdUserinfo_loginPassword" property="loginPassword" z="nmU3zbmqgTBwr6H171pj3UYdd2I="/>
-            <table:column id="c_com_paperuni_demo_model_TdUserinfo_groupName" property="groupName" z="kAGV6LuRXKxS2bsJg5hhQ2lZa9M="/>
-            <table:column id="c_com_paperuni_demo_model_TdUserinfo_createBy" property="createBy" z="NtciZoJ4DwElAlEg+qxqVGaCQpQ="/>
+            <table:column id="c_com_paperuni_demo_model_TdUserinfo_city" property="city" z="WghMapne6fkUMY9CapeCF0ziwgA="/>
+            <table:column id="c_com_paperuni_demo_model_TdUserinfo_contactId" property="contactId" z="3NYjitrr/9nsjhStyIMoGpO2jz4="/>
+            <table:column id="c_com_paperuni_demo_model_TdUserinfo_contactType" property="contactType" z="q9GZfsPPDrXS6+80f6pI8FDG4kI="/>
+            <table:column id="c_com_paperuni_demo_model_TdUserinfo_country" property="country" z="9CYgm/cix09cfpCBtboDMdHGRFM="/>
         </table:table>
     </page:list>
 </div>

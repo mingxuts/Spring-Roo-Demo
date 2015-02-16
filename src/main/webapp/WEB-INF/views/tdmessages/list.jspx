@@ -5,11 +5,11 @@
     <page:list id="pl_com_paperuni_demo_model_TdMessage" items="${tdmessages}" z="IYpnV0yCnSdo/iUfVxQEZFyocg4=">
         <table:table data="${tdmessages}" id="l_com_paperuni_demo_model_TdMessage" path="/tdmessages" z="IY5DG7YjUZsMIH6GncapRJn7dUI=">
             <table:column id="c_com_paperuni_demo_model_TdMessage_taskId" property="taskId" z="NjjxAgWLMB2nvWTc+QedritROqQ="/>
-            <table:column id="c_com_paperuni_demo_model_TdMessage_source" property="source" z="pGMqePnnJxb9DMeQx/GLX0aznBU="/>
             <table:column calendar="true" dateTimePattern="${tdMessage_createdate_date_format}" id="c_com_paperuni_demo_model_TdMessage_createDate" property="createDate" z="xPtW2CuygxyKxwlhKAZhjp9mPww="/>
             <table:column id="c_com_paperuni_demo_model_TdMessage_body" property="body" z="+66kdJX0NLroWpI+txMCeAghIAE="/>
-            <table:column id="c_com_paperuni_demo_model_TdMessage_link" property="link" z="e5+NSWp6i5xapNhZD8KQlNlwQyU="/>
-            <table:column id="c_com_paperuni_demo_model_TdMessage_hasReview" property="hasReview" z="MlvECLbnqy0Ha8sYC8JcK+UdbMI="/>
+            <table:column id="c_com_paperuni_demo_model_TdMessage_file" property="file" z="bhcRlaTXrj7Dm/K7rUCNYvZjACc="/>
+            <table:column id="c_com_paperuni_demo_model_TdMessage_fileContentType" property="fileContentType" z="TCXTT4wfpxlw3xB6Op6YXHFx35M="/>
+            <table:column id="c_com_paperuni_demo_model_TdMessage_hasRead" property="hasRead" z="O33n6d0YyPNLGmZ/MThL2doWgrc="/>
         </table:table>
     </page:list>
 </div>

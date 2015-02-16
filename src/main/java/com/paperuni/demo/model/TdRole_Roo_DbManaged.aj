@@ -9,23 +9,15 @@ import javax.validation.constraints.NotNull;
 
 privileged aspect TdRole_Roo_DbManaged {
     
-    @Column(name = "Name", length = 20)
-    @NotNull
-    private String TdRole.name;
-    
     @Column(name = "Description", length = 70)
     private String TdRole.description;
     
     @Column(name = "IsActivated")
     private Boolean TdRole.isActivated;
     
-    public String TdRole.getName() {
-        return name;
-    }
-    
-    public void TdRole.setName(String name) {
-        this.name = name;
-    }
+    @Column(name = "Name", length = 20)
+    @NotNull
+    private String TdRole.name;
     
     public String TdRole.getDescription() {
         return description;
@@ -41,6 +33,14 @@ privileged aspect TdRole_Roo_DbManaged {
     
     public void TdRole.setIsActivated(Boolean isActivated) {
         this.isActivated = isActivated;
+    }
+    
+    public String TdRole.getName() {
+        return name;
+    }
+    
+    public void TdRole.setName(String name) {
+        this.name = name;
     }
     
 }

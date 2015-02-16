@@ -48,6 +48,8 @@ privileged aspect TdTaskDataOnDemand_Roo_DataOnDemand {
         setFeedBackDescription(obj, index);
         setFile(obj, index);
         setFileContentType(obj, index);
+        setFileName(obj, index);
+        setFileSize(obj, index);
         setFormat(obj, index);
         setFullPrice(obj, index);
         setIncludeFigure(obj, index);
@@ -128,6 +130,9 @@ privileged aspect TdTaskDataOnDemand_Roo_DataOnDemand {
     
     public void TdTaskDataOnDemand.setFeedBackDescription(TdTask obj, int index) {
         String feedBackDescription = "feedBackDescription_" + index;
+        if (feedBackDescription.length() > 255) {
+            feedBackDescription = feedBackDescription.substring(0, 255);
+        }
         obj.setFeedBackDescription(feedBackDescription);
     }
     
@@ -142,6 +147,19 @@ privileged aspect TdTaskDataOnDemand_Roo_DataOnDemand {
             fileContentType = fileContentType.substring(0, 50);
         }
         obj.setFileContentType(fileContentType);
+    }
+    
+    public void TdTaskDataOnDemand.setFileName(TdTask obj, int index) {
+        String fileName = "fileName_" + index;
+        if (fileName.length() > 70) {
+            fileName = fileName.substring(0, 70);
+        }
+        obj.setFileName(fileName);
+    }
+    
+    public void TdTaskDataOnDemand.setFileSize(TdTask obj, int index) {
+        Integer fileSize = new Integer(index);
+        obj.setFileSize(fileSize);
     }
     
     public void TdTaskDataOnDemand.setFormat(TdTask obj, int index) {

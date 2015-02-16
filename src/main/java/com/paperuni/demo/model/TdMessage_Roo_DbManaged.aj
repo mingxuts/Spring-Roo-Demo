@@ -20,26 +20,14 @@ privileged aspect TdMessage_Roo_DbManaged {
     @JoinColumn(name = "TaskId", referencedColumnName = "ID", nullable = false, insertable = false, updatable = false)
     private TdTask TdMessage.taskId;
     
-    @Column(name = "Source", length = 2)
-    private String TdMessage.source;
+    @Column(name = "Body", length = 255)
+    @NotNull
+    private String TdMessage.body;
     
     @Column(name = "CreateDate")
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(style = "MM")
     private Calendar TdMessage.createDate;
-    
-    @Column(name = "Body")
-    @NotNull
-    private String TdMessage.body;
-    
-    @Column(name = "Link")
-    private String TdMessage.link;
-    
-    @Column(name = "HasReview")
-    private Boolean TdMessage.hasReview;
-    
-    @Column(name = "HasRead")
-    private Boolean TdMessage.hasRead;
     
     @Column(name = "File")
     private byte[] TdMessage.file;
@@ -47,28 +35,24 @@ privileged aspect TdMessage_Roo_DbManaged {
     @Column(name = "FileContentType", length = 50)
     private String TdMessage.fileContentType;
     
+    @Column(name = "HasRead")
+    private Boolean TdMessage.hasRead;
+    
+    @Column(name = "HasReview")
+    private Boolean TdMessage.hasReview;
+    
+    @Column(name = "Link", length = 255)
+    private String TdMessage.link;
+    
+    @Column(name = "Source", length = 2)
+    private String TdMessage.source;
+    
     public TdTask TdMessage.getTaskId() {
         return taskId;
     }
     
     public void TdMessage.setTaskId(TdTask taskId) {
         this.taskId = taskId;
-    }
-    
-    public String TdMessage.getSource() {
-        return source;
-    }
-    
-    public void TdMessage.setSource(String source) {
-        this.source = source;
-    }
-    
-    public Calendar TdMessage.getCreateDate() {
-        return createDate;
-    }
-    
-    public void TdMessage.setCreateDate(Calendar createDate) {
-        this.createDate = createDate;
     }
     
     public String TdMessage.getBody() {
@@ -79,28 +63,12 @@ privileged aspect TdMessage_Roo_DbManaged {
         this.body = body;
     }
     
-    public String TdMessage.getLink() {
-        return link;
+    public Calendar TdMessage.getCreateDate() {
+        return createDate;
     }
     
-    public void TdMessage.setLink(String link) {
-        this.link = link;
-    }
-    
-    public Boolean TdMessage.getHasReview() {
-        return hasReview;
-    }
-    
-    public void TdMessage.setHasReview(Boolean hasReview) {
-        this.hasReview = hasReview;
-    }
-    
-    public Boolean TdMessage.getHasRead() {
-        return hasRead;
-    }
-    
-    public void TdMessage.setHasRead(Boolean hasRead) {
-        this.hasRead = hasRead;
+    public void TdMessage.setCreateDate(Calendar createDate) {
+        this.createDate = createDate;
     }
     
     public byte[] TdMessage.getFile() {
@@ -117,6 +85,38 @@ privileged aspect TdMessage_Roo_DbManaged {
     
     public void TdMessage.setFileContentType(String fileContentType) {
         this.fileContentType = fileContentType;
+    }
+    
+    public Boolean TdMessage.getHasRead() {
+        return hasRead;
+    }
+    
+    public void TdMessage.setHasRead(Boolean hasRead) {
+        this.hasRead = hasRead;
+    }
+    
+    public Boolean TdMessage.getHasReview() {
+        return hasReview;
+    }
+    
+    public void TdMessage.setHasReview(Boolean hasReview) {
+        this.hasReview = hasReview;
+    }
+    
+    public String TdMessage.getLink() {
+        return link;
+    }
+    
+    public void TdMessage.setLink(String link) {
+        this.link = link;
+    }
+    
+    public String TdMessage.getSource() {
+        return source;
+    }
+    
+    public void TdMessage.setSource(String source) {
+        this.source = source;
     }
     
 }

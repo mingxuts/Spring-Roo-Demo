@@ -47,6 +47,8 @@ privileged aspect TdOrderDataOnDemand_Roo_DataOnDemand {
         setDeadLine(obj, index);
         setFile(obj, index);
         setFileContentType(obj, index);
+        setFileName(obj, index);
+        setFileSize(obj, index);
         setFormat(obj, index);
         setIncludeFigure(obj, index);
         setNote(obj, index);
@@ -101,6 +103,19 @@ privileged aspect TdOrderDataOnDemand_Roo_DataOnDemand {
             fileContentType = fileContentType.substring(0, 50);
         }
         obj.setFileContentType(fileContentType);
+    }
+    
+    public void TdOrderDataOnDemand.setFileName(TdOrder obj, int index) {
+        String fileName = "fileName_" + index;
+        if (fileName.length() > 70) {
+            fileName = fileName.substring(0, 70);
+        }
+        obj.setFileName(fileName);
+    }
+    
+    public void TdOrderDataOnDemand.setFileSize(TdOrder obj, int index) {
+        Integer fileSize = new Integer(index);
+        obj.setFileSize(fileSize);
     }
     
     public void TdOrderDataOnDemand.setFormat(TdOrder obj, int index) {

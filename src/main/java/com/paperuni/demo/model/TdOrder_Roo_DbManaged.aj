@@ -25,14 +25,19 @@ privileged aspect TdOrder_Roo_DbManaged {
     @JoinColumn(name = "TaskId", referencedColumnName = "ID")
     private TdTask TdOrder.taskId;
     
-    @Column(name = "OrderStatus", length = 45)
-    private String TdOrder.orderStatus;
+    @Column(name = "Coupon", length = 35)
+    private String TdOrder.coupon;
     
-    @Column(name = "StartDate")
-    @NotNull
+    @Column(name = "CourseLevel", length = 35)
+    private String TdOrder.courseLevel;
+    
+    @Column(name = "CreateDate")
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(style = "MM")
-    private Calendar TdOrder.startDate;
+    private Calendar TdOrder.createDate;
+    
+    @Column(name = "CustomerId")
+    private Integer TdOrder.customerId;
     
     @Column(name = "DeadLine")
     @NotNull
@@ -40,32 +45,23 @@ privileged aspect TdOrder_Roo_DbManaged {
     @DateTimeFormat(style = "MM")
     private Calendar TdOrder.deadLine;
     
-    @Column(name = "WordCount")
-    @NotNull
-    private Integer TdOrder.wordCount;
+    @Column(name = "File")
+    private byte[] TdOrder.file;
+    
+    @Column(name = "FileContentType", length = 50)
+    private String TdOrder.fileContentType;
+    
+    @Column(name = "Format", length = 30)
+    private String TdOrder.format;
+    
+    @Column(name = "IncludeFigure", length = 30)
+    private String TdOrder.includeFigure;
     
     @Column(name = "Note", length = 255)
     private String TdOrder.note;
     
-    @Column(name = "CustomerId")
-    private Integer TdOrder.customerId;
-    
-    @Column(name = "CourseLevel", length = 35)
-    private String TdOrder.courseLevel;
-    
-    @Column(name = "Coupon", length = 35)
-    private String TdOrder.coupon;
-    
-    @Column(name = "CreateDate")
-    @Temporal(TemporalType.TIMESTAMP)
-    @DateTimeFormat(style = "MM")
-    private Calendar TdOrder.createDate;
-    
-    @Column(name = "File")
-    private byte[] TdOrder.file;
-    
-    @Column(name = "Format", length = 30)
-    private String TdOrder.format;
+    @Column(name = "OrderStatus", length = 45)
+    private String TdOrder.orderStatus;
     
     @Column(name = "Referencing", length = 30)
     private String TdOrder.referencing;
@@ -73,11 +69,21 @@ privileged aspect TdOrder_Roo_DbManaged {
     @Column(name = "SourcesCount")
     private Short TdOrder.sourcesCount;
     
-    @Column(name = "FileContentType", length = 50)
-    private String TdOrder.fileContentType;
+    @Column(name = "StartDate")
+    @NotNull
+    @Temporal(TemporalType.TIMESTAMP)
+    @DateTimeFormat(style = "MM")
+    private Calendar TdOrder.startDate;
     
-    @Column(name = "IncludeFigure", length = 30)
-    private String TdOrder.includeFigure;
+    @Column(name = "WordCount")
+    @NotNull
+    private Integer TdOrder.wordCount;
+    
+    @Column(name = "FileName", length = 70)
+    private String TdOrder.fileName;
+    
+    @Column(name = "FileSize")
+    private Integer TdOrder.fileSize;
     
     public TdSubject TdOrder.getSubjectId() {
         return subjectId;
@@ -95,52 +101,12 @@ privileged aspect TdOrder_Roo_DbManaged {
         this.taskId = taskId;
     }
     
-    public String TdOrder.getOrderStatus() {
-        return orderStatus;
+    public String TdOrder.getCoupon() {
+        return coupon;
     }
     
-    public void TdOrder.setOrderStatus(String orderStatus) {
-        this.orderStatus = orderStatus;
-    }
-    
-    public Calendar TdOrder.getStartDate() {
-        return startDate;
-    }
-    
-    public void TdOrder.setStartDate(Calendar startDate) {
-        this.startDate = startDate;
-    }
-    
-    public Calendar TdOrder.getDeadLine() {
-        return deadLine;
-    }
-    
-    public void TdOrder.setDeadLine(Calendar deadLine) {
-        this.deadLine = deadLine;
-    }
-    
-    public Integer TdOrder.getWordCount() {
-        return wordCount;
-    }
-    
-    public void TdOrder.setWordCount(Integer wordCount) {
-        this.wordCount = wordCount;
-    }
-    
-    public String TdOrder.getNote() {
-        return note;
-    }
-    
-    public void TdOrder.setNote(String note) {
-        this.note = note;
-    }
-    
-    public Integer TdOrder.getCustomerId() {
-        return customerId;
-    }
-    
-    public void TdOrder.setCustomerId(Integer customerId) {
-        this.customerId = customerId;
+    public void TdOrder.setCoupon(String coupon) {
+        this.coupon = coupon;
     }
     
     public String TdOrder.getCourseLevel() {
@@ -151,20 +117,28 @@ privileged aspect TdOrder_Roo_DbManaged {
         this.courseLevel = courseLevel;
     }
     
-    public String TdOrder.getCoupon() {
-        return coupon;
-    }
-    
-    public void TdOrder.setCoupon(String coupon) {
-        this.coupon = coupon;
-    }
-    
     public Calendar TdOrder.getCreateDate() {
         return createDate;
     }
     
     public void TdOrder.setCreateDate(Calendar createDate) {
         this.createDate = createDate;
+    }
+    
+    public Integer TdOrder.getCustomerId() {
+        return customerId;
+    }
+    
+    public void TdOrder.setCustomerId(Integer customerId) {
+        this.customerId = customerId;
+    }
+    
+    public Calendar TdOrder.getDeadLine() {
+        return deadLine;
+    }
+    
+    public void TdOrder.setDeadLine(Calendar deadLine) {
+        this.deadLine = deadLine;
     }
     
     public byte[] TdOrder.getFile() {
@@ -175,12 +149,44 @@ privileged aspect TdOrder_Roo_DbManaged {
         this.file = file;
     }
     
+    public String TdOrder.getFileContentType() {
+        return fileContentType;
+    }
+    
+    public void TdOrder.setFileContentType(String fileContentType) {
+        this.fileContentType = fileContentType;
+    }
+    
     public String TdOrder.getFormat() {
         return format;
     }
     
     public void TdOrder.setFormat(String format) {
         this.format = format;
+    }
+    
+    public String TdOrder.getIncludeFigure() {
+        return includeFigure;
+    }
+    
+    public void TdOrder.setIncludeFigure(String includeFigure) {
+        this.includeFigure = includeFigure;
+    }
+    
+    public String TdOrder.getNote() {
+        return note;
+    }
+    
+    public void TdOrder.setNote(String note) {
+        this.note = note;
+    }
+    
+    public String TdOrder.getOrderStatus() {
+        return orderStatus;
+    }
+    
+    public void TdOrder.setOrderStatus(String orderStatus) {
+        this.orderStatus = orderStatus;
     }
     
     public String TdOrder.getReferencing() {
@@ -199,20 +205,36 @@ privileged aspect TdOrder_Roo_DbManaged {
         this.sourcesCount = sourcesCount;
     }
     
-    public String TdOrder.getFileContentType() {
-        return fileContentType;
+    public Calendar TdOrder.getStartDate() {
+        return startDate;
     }
     
-    public void TdOrder.setFileContentType(String fileContentType) {
-        this.fileContentType = fileContentType;
+    public void TdOrder.setStartDate(Calendar startDate) {
+        this.startDate = startDate;
     }
     
-    public String TdOrder.getIncludeFigure() {
-        return includeFigure;
+    public Integer TdOrder.getWordCount() {
+        return wordCount;
     }
     
-    public void TdOrder.setIncludeFigure(String includeFigure) {
-        this.includeFigure = includeFigure;
+    public void TdOrder.setWordCount(Integer wordCount) {
+        this.wordCount = wordCount;
+    }
+    
+    public String TdOrder.getFileName() {
+        return fileName;
+    }
+    
+    public void TdOrder.setFileName(String fileName) {
+        this.fileName = fileName;
+    }
+    
+    public Integer TdOrder.getFileSize() {
+        return fileSize;
+    }
+    
+    public void TdOrder.setFileSize(Integer fileSize) {
+        this.fileSize = fileSize;
     }
     
 }
